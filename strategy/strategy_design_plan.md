@@ -10,11 +10,19 @@
 
 ## 1. Strategy Overview
 
-This strategy seeks to identify UK-listed equities with the potential to deliver 5x returns over a 5-7 year horizon (or 3x over 3-5 years as a "mini-bagger" threshold). It does so by systematically combining the factor characteristics that academic research has shown to be present in stocks before they deliver extreme positive returns: small capitalisation, high free cash flow yield, strong gross profitability, moderate valuation, positive momentum, and disciplined investment growth. The approach is rooted in validated findings from Yartseva (2025), Novy-Marx (2013), Bermejo et al. (2021), Asness et al. (2013), and Bessembinder (2018), adapted specifically for the structural realities of UK equity markets.
+This is a **UK small-cap quality-value-momentum factor strategy** that systematically targets cheap, profitable, trending small companies. It is not a multibagger identification system -- no factor screen can reliably predict which specific stocks will deliver 5-10x returns. Instead, the strategy increases exposure to the population from which multibaggers are drawn, while generating steady factor-driven alpha from the broader portfolio.
 
-**[DATA SUPPORTS]** The strategy is grounded in a statistical reality: 57.4% of all stocks underperform Treasury bills over their lifetimes, and only 2-4% of stocks drive virtually all net market wealth creation (Bessembinder 2018, 2023). This means that any stock-picking strategy faces terrible base rates. The only empirically validated way to improve those odds is to systematically tilt toward the factor characteristics that the wealth-creating minority disproportionately exhibits -- high profitability, reasonable valuation, positive price trends, and disciplined capital allocation -- while maintaining sufficient diversification to have a meaningful probability of owning the rare winners.
+The strategy has two components:
 
-**[REASONABLE ASSUMPTION]** The UK market is smaller and less liquid than the US, with fewer extreme outcomes, which is why the primary target is 5x (not Yartseva's 10x, which was studied in US equities during a 15-year bull market). The strategy must also contend with UK-specific frictions: 0.5% stamp duty on Main Market transactions, AIM spreads that are 5-10x wider than FTSE 100, a declining number of listed companies, and persistent fund outflows from UK equities. These constraints are embedded into every design decision below.
+1. **Core Factor Portfolio (80% of capital):** A disciplined, semi-annually rebalanced portfolio of 16-24 UK small-cap stocks selected by three well-validated factors: gross profitability (GP/Assets), valuation (EV/EBITDA), and momentum (12-1 month). This component targets 1-3% net annual alpha over a UK small-cap benchmark through systematic factor exposure. FCF yield is used as a secondary quality check.
+
+2. **Conviction Hold Carve-out (20% of capital):** 4-6 positions drawn from the Core Portfolio that exhibit the strongest fundamentals and clearest compounding potential. Once designated as conviction holds, these positions are **exempt from factor-based rebalancing** and are held until the business thesis breaks. This is where multibagger compounding can occur -- if it occurs at all.
+
+The approach is rooted in validated findings from Novy-Marx (2013), Bermejo et al. (2021), Asness et al. (2013), and Bessembinder (2018), with directional support from Yartseva (2025), adapted for the structural realities of UK equity markets.
+
+**[DATA SUPPORTS]** The strategy is grounded in a statistical reality: 57.4% of all stocks underperform Treasury bills over their lifetimes, and only 2-4% of stocks drive virtually all net market wealth creation (Bessembinder 2018, 2023). This means that any stock-picking strategy faces terrible base rates. The only empirically validated way to improve those odds is to systematically tilt toward the factor characteristics that the wealth-creating minority disproportionately exhibits -- high profitability, reasonable valuation, and positive price trends -- while maintaining sufficient diversification to have a meaningful probability of owning the rare winners.
+
+**[HONEST LIMITATION]** The UK market is smaller and less liquid than the US, with fewer extreme outcomes. The strategy must contend with UK-specific frictions: 0.5% stamp duty on Main Market transactions, AIM spreads that are 5-10x wider than FTSE 100, a declining number of listed companies, and persistent fund outflows from UK equities. No UK-specific backtest of this strategy has been conducted. The expected performance characteristics are extrapolated from US and European studies in different market segments. These constraints and evidence gaps are embedded into every design decision below.
 
 ---
 
@@ -58,62 +66,76 @@ This universe will shrink during bear markets (lower market caps, reduced liquid
 
 ### 3.1 Primary Factors (Must-Have)
 
-These factors have the strongest empirical support (t-statistics > 3.0) and must all be present for a stock to enter the portfolio. They are the non-negotiable quality gates.
+These factors have strong empirical support across multiple independent studies, multiple markets, and multiple time periods. They are the non-negotiable quality gates.
 
-#### Factor 1: Free Cash Flow Yield (FCF/P)
+**Note on evidence standard:** Only factors with multi-source validation (at least two independent studies, at least one including UK or European data) qualify as primary. Factors supported by a single study -- regardless of reported effect size -- are classified as secondary or excluded.
 
-- **Academic source:** Yartseva (2025) -- strongest single predictor of multibagger returns (regression coefficient 46-82, highest among all 150+ variables tested). Also supported by Fama & French (2018) finding that cash-based operating profitability dominates accrual measures.
-- **Measurement formula:** Free Cash Flow / Market Capitalisation, where Free Cash Flow = Operating Cash Flow - Capital Expenditures (both from the cash flow statement).
-- **Threshold:** Top 40% of the eligible universe (i.e., above-median FCF yield among stocks passing universe filters). **[REASONABLE ASSUMPTION]** Yartseva does not specify an exact percentile cutoff; the top 40% balances selectivity with maintaining sufficient universe size.
-- **Evidence strength:** Very strong. Combines profitability and valuation in a single, manipulation-resistant metric. Cash flow is harder to manipulate than accrual earnings.
-- **Why it works:** FCF yield captures companies that are genuinely profitable (generating real cash) AND reasonably priced (the market has not fully capitalised their cash generation potential). This is the intersection of quality and value that Yartseva identifies as the strongest multibagger predictor.
+#### Factor 1: Gross Profitability (GP/Assets)
 
-#### Factor 2: Gross Profitability (GP/Assets)
-
-- **Academic source:** Novy-Marx (2013) -- "The Other Side of Value." Tested in 19 developed international markets. Bermejo et al. (2021) found FF3 alpha of 4.23% in Europe (t=10.88). Cotter & McGeever (2018) found profitability remains robust in UK even as other anomalies decay post-publication.
+- **Academic source:** Novy-Marx (2013) -- "The Other Side of Value," tested in 19 developed international markets. Bermejo et al. (2021) found FF3 alpha of 4.23% in Europe (t=10.88). Cotter & McGeever (2018) found profitability remains robust in UK even as other anomalies decay post-publication. Hanauer & Huber (2016) confirmed in 49 countries.
 - **Measurement formula:** (Revenue - Cost of Goods Sold) / Total Assets.
-- **Threshold:** Above the 40th percentile of the eligible universe (approximately above-median). **[DATA SUPPORTS]** Novy-Marx demonstrated that above-median gross profitability delivers significant alpha; the premium is approximately monotonic across quintiles.
-- **Evidence strength:** Very strong. The most robust profitability metric internationally; confirmed to survive in UK specifically when other anomalies vanish.
-- **Why gross profitability rather than ROE or operating profit:** **[DATA SUPPORTS]** Hanauer & Huber (2016) tested profitability measures in 49 countries and found all profitability definitions besides ROE are robustly priced outside the US. Foye (2018) confirmed that gross profit provides an improved description of UK equity returns versus operating profit. ROE is the weakest international profitability metric. Novy-Marx & Medhat (2025) showed profitability subsumes all quality factors.
+- **Threshold:** Above the 40th percentile of the eligible universe.
+- **Evidence strength:** Very strong. The most robust profitability metric internationally; confirmed to survive in UK specifically when other anomalies vanish. Multiple independent sources, multiple markets, multiple decades.
+- **Why it works:** Captures the economic engine of a business before management can obscure it through accounting choices. Complementary to value -- profitable stocks and cheap stocks are different sets of stocks (Novy-Marx 2013).
 
-#### Factor 3: Valuation (EV/EBITDA, with B/M as secondary)
+#### Factor 2: Valuation (EV/EBITDA)
 
-- **Academic source:** Bermejo et al. (2021) -- EV/EBITDA is the strongest European value metric. Yartseva (2025) -- high book-to-market delivers +34.7% excess return for multibaggers vs +12.8% for low-value, with a non-linear jump from medium to high value.
-- **Measurement formula (primary):** Enterprise Value / EBITDA, where Enterprise Value = Market Cap + Total Debt - Cash and Cash Equivalents. Lower values indicate cheaper stocks.
-- **Measurement formula (secondary):** Book Value of Equity / Market Capitalisation. Higher values indicate cheaper stocks.
-- **Threshold:** EV/EBITDA below the 60th percentile of the eligible universe (i.e., in the cheaper three-fifths). This is deliberately NOT requiring extreme cheapness. **[DATA SUPPORTS]** Stockopedia's UK evidence suggests moderate valuations (forecast P/E < 15) rather than deep value; Yartseva shows the critical distinction is between "reasonably valued" and "expensive," not between "deep value" and "moderate."
-- **Evidence strength:** Strong. Value is one of the oldest documented anomalies. The non-linear relationship documented by Yartseva (disproportionate jump from medium to high value) justifies requiring reasonable valuation without demanding extreme cheapness.
+- **Academic source:** Bermejo et al. (2021) -- EV/EBITDA is the strongest European value metric. Harvey, Liu & Zhu (2016) -- Value (HML) survives the 0.1% significance threshold. DMS long-run UK data: 10.8% vs 7.8% for high vs low yield over 117 years.
+- **Measurement formula:** Enterprise Value / EBITDA, where Enterprise Value = Market Cap + Total Debt - Cash. Lower values indicate cheaper stocks.
+- **Threshold:** EV/EBITDA below the 60th percentile of the eligible universe (not in the most expensive 40%).
+- **Evidence strength:** Strong. Value is one of two factors surviving the harshest multiple-testing corrections globally. Long-run UK evidence is robust. EV/EBITDA is the strongest value metric in European data.
+- **Why EV/EBITDA rather than P/E or P/B:** EV/EBITDA is capital-structure neutral and less distorted by accounting choices than P/E. It outperforms P/E, P/B, and P/CF in Bermejo et al.'s European tests.
+
+#### Factor 3: Momentum (12-1 month)
+
+- **Academic source:** Bermejo et al. (2021) -- strongest pure factor in Europe (Sharpe 0.80). Liu, Strong & Xu (1999) -- confirmed momentum profits in UK equities. Asness, Moskowitz & Pedersen (2013) -- momentum confirmed in UK specifically. Harvey, Liu & Zhu (2016) -- MOM survives the 0.1% significance threshold.
+- **Measurement formula:** Total return over the prior 12 months excluding the most recent month (standard Jegadeesh-Titman measure).
+- **Threshold:** Positive 12-1 month return (above zero). Used as a confirmation signal, not a hard ranking factor.
+- **Evidence strength:** Strong across multiple studies and markets. **Important caveats:** absent in UK data before 1977 (Hon & Tonks 2003), subject to severe crash risk during bear-market recoveries (Daniel & Moskowitz 2016), and declining significance in recent UK data (Cotter & McGeever 2018).
+- **Why positive-only rather than top-decile:** For a semi-annually rebalanced small-cap strategy, momentum serves primarily to avoid "falling knives" (stocks in structural decline) rather than to chase recent winners. The crash risk of aggressive momentum tilts is amplified in concentrated small-cap portfolios.
 
 ### 3.2 Secondary Factors (Enhancement)
 
-These factors enhance the probability of multibagger outcomes but are applied as scoring factors rather than hard gates. A stock can enter the portfolio without maximising on all of these, but higher scores on these factors lead to higher portfolio weighting.
+These factors enhance scoring but are applied as tiebreakers and gradients, not hard gates. A stock can enter the portfolio without maximising on these.
 
-#### Factor 4: Investment-EBITDA Growth Interaction
+#### Factor 4: Free Cash Flow Yield (FCF/P)
 
-- **Academic source:** Yartseva (2025) -- asset growth is positive ONLY when EBITDA growth >= asset growth. When investment exceeds EBITDA growth, returns drop 5-23%. Cooper, Gulen & Scallise (2008) documented the asset growth anomaly (highest decile underperforms lowest by 7.3% annually). Papanastasopoulos (2017) found the anomaly is more pronounced in loss-making firms.
-- **Measurement:**
-  - Asset Growth Rate = (Total Assets_t - Total Assets_{t-1}) / Total Assets_{t-1}
-  - EBITDA Growth Rate = (EBITDA_t - EBITDA_{t-1}) / EBITDA_{t-1}
-  - Signal: POSITIVE if EBITDA Growth Rate >= Asset Growth Rate (growth is productive). NEGATIVE if Asset Growth Rate > EBITDA Growth Rate by more than 10 percentage points (growth is dilutive).
-- **Threshold:** Score +1 if productive growth, 0 if neutral, -1 if dilutive growth. Stocks scoring -1 on this factor receive a meaningful penalty in composite scoring (see Section 4.2).
-- **Evidence strength:** Moderate-to-strong. The interaction effect is well-documented by Yartseva with a clear economic mechanism. The standalone asset growth anomaly is confirmed in Europe (Papanastasopoulos 2017).
+- **Academic source:** Fama & French (2018) -- cash-based operating profitability dominates accrual measures. Yartseva (2025) reports FCF yield as the strongest predictor in the multibagger sample (coefficient 46-82), though this is a single unreplicated US study.
+- **Measurement formula:** Free Cash Flow / Market Capitalisation, where FCF = Operating Cash Flow - Capital Expenditures.
+- **Threshold:** Positive FCF required (hard gate). Within positive-FCF stocks, higher FCF yield improves composite score.
+- **Evidence strength:** Moderate. Cash-based profitability is well-supported broadly (Fama & French 2018). The specific claim that FCF yield predicts *extreme* returns rests on Yartseva alone. Coefficient instability (46-82 across specifications) is a concern.
+- **Role in strategy:** Quality check ensuring companies generate real cash, not just accounting profits. Complements GP/Assets by capturing the cash flow dimension of profitability.
 
-#### Factor 5: Price Momentum (12-1 month)
+#### Factor 5: Small Cap Size (within eligible universe)
 
-- **Academic source:** Bermejo et al. (2021) -- strongest pure factor in Europe (Sharpe 0.80). Liu, Strong & Xu (1999) confirmed momentum profits in UK equities. Asness, Moskowitz & Pedersen (2013) documented momentum in UK specifically.
-- **Measurement formula:** Total return over the prior 12 months excluding the most recent month (to avoid short-term reversal effects). This is the standard Jegadeesh-Titman momentum measure.
-- **Threshold:** Positive 12-1 month return (above zero). This is used as a confirmation signal rather than requiring top-decile momentum. **[REASONABLE ASSUMPTION]** For multibagger identification, the role of momentum is to avoid "falling knives" (stocks in structural decline). Yartseva (2025) found complex momentum effects with quick trend reversals, suggesting momentum acts more as a contrarian timing signal for multibaggers than as a pure ranking factor.
-- **Evidence strength for UK:** Strong as a standalone factor, but with important caveats. Hon & Tonks (2003) found momentum was NOT present in the UK during 1955-1976, suggesting it may not be a permanent market feature. Daniel & Moskowitz (2016) documented severe crash risk in bear market recoveries, confirmed in UK data.
-- **CRITICAL CAVEAT:** Momentum is used as a confirmation/timing overlay, NOT as a primary selection factor. Yartseva's evidence suggests that for multibaggers specifically, momentum has a contrarian element -- the biggest future winners are not always the stocks with the strongest recent momentum.
+- **Academic source:** Multibaggers start small by mathematical necessity. Fama-French SMB premium is larger in profitable small caps. UK size premium reversed post-publication (Dimson & Marsh 1999).
+- **Measurement:** Market capitalisation at time of screening. Within the eligible universe (GBP 30m-1,000m), smaller stocks receive a modest scoring bonus.
+- **Threshold:** Scoring gradient. Stocks below GBP 200m receive the highest size score; GBP 200m-500m moderate; GBP 500m-1,000m lowest.
+- **Evidence strength:** Mixed. Size is a universe filter (where to look), not a return predictor (what to buy). The raw size premium is unreliable in the UK. Within the quality-filtered universe, smaller stocks may have wider information asymmetry, but this is an assumption.
 
-#### Factor 6: Small Cap Size (within eligible universe)
+### 3.3 Factors Excluded from Core Model (Insufficient Evidence)
 
-- **Academic source:** Yartseva (2025) -- multibaggers start small. Stockopedia UK -- GBP 50m-350m starting range. The Fama-French SMB premium is larger among profitable small caps.
-- **Measurement:** Market capitalisation at time of screening. Within the eligible universe (GBP 30m-1,000m), smaller stocks receive higher scores.
-- **Threshold:** Scoring gradient rather than hard cutoff. Stocks below GBP 200m receive the highest size score; GBP 200m-500m receive moderate score; GBP 500m-1,000m receive the lowest size score.
-- **Evidence strength:** Mixed. **[DATA SUPPORTS]** Dimson & Marsh (1999) documented a stark post-publication reversal of the UK size premium (from +6% to -6%). However, Yartseva and Mayer confirm that multibaggers DO start small. The resolution: the raw size premium is weak/reversed in UK, but quality-filtered small caps (i.e., small caps that also pass profitability and valuation screens) restore the premium.
+The following factors were considered but excluded from the scoring model due to insufficient independent validation. They may be reinstated if replicated in UK/European data.
 
-### 3.3 Screening Overlays
+#### Excluded: Investment-EBITDA Growth Interaction
+
+- **Academic source:** Yartseva (2025) only. No independent replication in any market.
+- **Why excluded:** Single-study finding with "100% of cases" claim that is a statistical red flag. Papanastasopoulos (2017) European evidence on asset growth anomalies contradicts the interaction pattern. The interaction term is inherently susceptible to look-ahead bias and overfitting in a 150-variable, 464-stock sample.
+- **What would change this:** Independent replication in UK or European small-cap data using survivorship-free datasets.
+- **Retained as heuristic:** Investors may note whether a company's asset growth is matched by earnings growth. This is good investment sense, but it should not be a scored factor in a systematic model until replicated.
+
+#### Excluded: Contrarian Momentum (Near 52-Week Lows)
+
+- **Academic source:** Yartseva (2025) only. Contradicts the standard momentum literature.
+- **Why excluded:** Single-study finding that directly conflicts with the well-validated 12-1 momentum factor. Including both standard momentum and contrarian momentum creates logical incoherence. The contrarian signal may identify value traps rather than future multibaggers if not paired with perfect fundamental judgment.
+- **What would change this:** Independent validation of contrarian momentum as a predictor of extreme positive returns in a multi-market study.
+
+#### Excluded: Interest Rate Regime Overlay
+
+- **Academic source:** Yartseva (2025) -- rising rates reduce multibagger returns by 8-12pp. US-specific finding using Federal Funds Rate.
+- **Why excluded:** Single-study finding. Bank of England transmission mechanism differs from the Fed. Regime-dependent factor timing is notoriously unreliable and adds complexity without proven benefit. The strategy should work across rate environments or not at all.
+
+### 3.4 Screening Overlays
 
 These are binary pass/fail screens applied after factor scoring to eliminate stocks with specific red flags. They are informed by evidence but serve primarily as risk management.
 
@@ -167,25 +189,24 @@ This is the primary implementation methodology. It applies sequential hard filte
 - Score remaining stocks on secondary factors (Section 4.2 below) and rank.
 - Select top 20-30 stocks for the portfolio.
 
-### 4.2 Scoring Alternative
+### 4.2 Composite Scoring
 
 For the composite score applied in Step 5, each surviving stock receives a score from 0-100 based on:
 
 | Factor | Weight | Justification |
 |---|---|---|
-| FCF Yield (rank within survivors) | 30% | Strongest single predictor (Yartseva 2025) |
-| Gross Profitability (rank within survivors) | 20% | Most robust international factor (Novy-Marx 2013) |
-| Investment-EBITDA Growth Interaction | 15% | Conditional investment quality (Yartseva 2025) |
-| Momentum (12-1 month return) | 15% | Strongest European pure factor (Bermejo 2021) |
-| Size (smaller = higher score) | 10% | Multibagger starting size (Yartseva, Stockopedia) |
-| EV/EBITDA (cheaper = higher score) | 10% | Non-linear value effect (Yartseva 2025, Bermejo 2021) |
+| Gross Profitability (GP/Assets rank) | 30% | Most robust international factor; survives UK post-publication decay (Novy-Marx 2013, Cotter & McGeever 2018) |
+| EV/EBITDA (cheaper = higher score) | 25% | Strongest European value metric (Bermejo 2021); survives harshest multiple-testing (Harvey et al. 2016) |
+| Momentum (12-1 month return) | 20% | Strongest pure European factor (Bermejo 2021); confirmed in UK (Liu et al. 1999) |
+| FCF Yield (rank within survivors) | 15% | Cash-based quality check (Fama & French 2018); directional support from Yartseva (2025) |
+| Size (smaller = higher score) | 10% | Modest tilt toward smaller companies where information asymmetry is wider |
 
-**Weight justification:** **[REASONABLE ASSUMPTION]** Weights are informed by relative evidence strength and effect sizes reported in the literature. FCF yield receives the highest weight because it was the strongest single predictor in Yartseva's comprehensive test of 150+ variables. Gross profitability receives the second-highest weight because it is the most robust profitability metric internationally and the factor most resistant to post-publication decay in the UK. Investment quality and momentum receive equal moderate weights. Size and valuation receive the lowest weights because they function primarily through their interaction with the quality factors rather than independently.
+**Weight justification:** Weights reflect the strength and breadth of evidence, not reported effect sizes from any single study. Gross profitability receives the highest weight because it has the broadest validation (19+ countries, multiple decades, UK-specific persistence). Value receives the second-highest weight because HML is one of two factors surviving the most extreme multiple-testing corrections. Momentum receives moderate weight because of crash risk and declining UK significance. FCF yield is secondary because its specific link to extreme returns rests on a single unreplicated study. Size receives the lowest weight because the raw size premium has reversed in the UK.
 
 **Penalty adjustments:**
-- Dilutive growth (Asset Growth >> EBITDA Growth): -15 points from composite score.
 - Negative 12-1 month momentum: -10 points.
 - Net shares outstanding growth > 5%: -10 points.
+- Negative free cash flow: excluded at Step 3 (hard gate), so this should not arise.
 
 ### 4.3 AND vs OR Logic
 
@@ -207,15 +228,32 @@ For the composite score applied in Step 5, each surviving stock receives a score
 
 ## 5. Portfolio Construction
 
-### 5.1 Number of Holdings
+### 5.1 Two-Tier Portfolio Structure
 
-**Target range: 20-30 positions.**
+The portfolio is split into two tiers with different management rules, resolving the tension between systematic factor rebalancing and patient compounding.
 
-**[DATA SUPPORTS]** Academic justification for this range:
-- **Lower bound (20):** Bessembinder (2018) showed only 4% of stocks are wealth creators. With 20 positions, the probability of holding zero wealth creators (assuming random selection from a universe where 4% are winners) is approximately (0.96)^20 = 44%. This is inadequate. However, factor screening substantially improves these odds -- the factor screens are designed to enrich the portfolio with stocks exhibiting wealth-creator characteristics, so the effective "hit rate" should be materially above 4%.
-- **Upper bound (30):** With 30 positions and an assumed factor-enriched hit rate of 10-15% (approximately 3x the base rate), the probability of holding at least one multibagger is approximately 96-99%. **[REASONABLE ASSUMPTION]** The 3x improvement in hit rate from factor screening is an assumption, not a measured quantity, but it is conservative relative to the effect sizes documented in the literature.
-- **Why not more:** Each additional position dilutes the impact of winners. If a 5x winner represents 1/20 of the portfolio, it contributes approximately 20 percentage points to total return. If it represents 1/50, it contributes only 8 percentage points. The strategy specifically seeks concentrated exposure to potential multibaggers.
-- **Why not fewer:** With fewer than 20 positions, idiosyncratic risk dominates. A single bankruptcy or fraud can devastate returns. Farago & Hjalmarsson (2023) showed individual stock returns exhibit extreme positive skewness at long horizons, but this also implies extreme negative skewness for individual losers.
+#### Tier 1: Core Factor Portfolio (80% of capital, 16-24 positions)
+
+This is a standard semi-annually rebalanced factor portfolio. Positions are selected by composite score and managed mechanically. Average holding period is approximately 3 years. This tier generates alpha through systematic factor exposure -- cheap, profitable, trending UK small caps.
+
+**Why 16-24 positions:** Provides sufficient diversification to manage idiosyncratic risk in UK small caps while maintaining meaningful position sizes (3.3-5.0% each). Classic portfolio theory suggests 20-30 stocks eliminates most idiosyncratic risk. The lower bound of 16 positions reflects the reduced universe size after filtering.
+
+#### Tier 2: Conviction Hold Carve-out (20% of capital, 4-6 positions)
+
+Positions are drawn from the Core Portfolio based on the strongest combination of: (a) highest composite factor scores, (b) qualitative assessment of business scalability and competitive position, and (c) management quality (insider ownership, capital allocation track record).
+
+**Once designated as a conviction hold, the position is exempt from factor-based rebalancing.** It is held until one of the conviction-specific sell triggers fires (Section 6.3). This is where multibagger compounding can occur -- if a stock triples and its factor scores deteriorate (because it is no longer "cheap"), it remains in Tier 2 rather than being sold at the next rebalance.
+
+**Why 4-6 positions:** At 20% of a GBP 500k-1m portfolio, each conviction hold is GBP 17,000-50,000. This is enough to be meaningful if a position delivers 5x+ returns (contributing 7-20% to total portfolio return) while limiting damage if any single conviction hold fails.
+
+**Promotion criteria (Core → Conviction):**
+- Stock has been held in the Core Portfolio for at least 6 months (one rebalance cycle)
+- Composite factor score is in the top 25% of the portfolio
+- Positive revenue growth trajectory (not just a single-year spike)
+- Management owns >3% of outstanding shares
+- Business model is simple and scalable (not project-dependent or commodity-dependent)
+
+**[HONEST LIMITATION]** The conviction hold selection introduces a discretionary element that cannot be backtested. This is acknowledged. The 80/20 split limits the damage if discretionary judgment is poor.
 
 ### 5.2 Position Sizing
 
@@ -247,13 +285,18 @@ For the composite score applied in Step 5, each surviving stock receives a score
 
 ### 6.1 Holding Period Philosophy
 
-**Core philosophy: Patient holding with systematic review.**
+**The two tiers have different holding philosophies. This resolves the contradiction (identified in A-10 of the assumptions document) between systematic rebalancing and patient compounding.**
 
-**[DATA SUPPORTS]** Multi-baggers require time to compound. Mayer (2018) found 100-baggers required a median of 10+ years. Yartseva's 10x sample spanned 15 years. Farago & Hjalmarsson (2023) showed that the positive skewness of individual stock returns -- which is the mathematical driver of multibagger outcomes -- increases dramatically with holding period.
+#### Tier 1 (Core Factor Portfolio): Systematic rebalancing
+- **Target holding period:** ~2-4 years per position (driven by factor score changes).
+- **Philosophy:** Factor signals drive entry and exit. When a stock's factor scores deteriorate, it is replaced regardless of narrative or sentiment. This is a systematic strategy -- it does not require faith in any individual stock.
+- **[DATA SUPPORTS]** Factor premiums are captured through portfolio turnover. Value and profitability signals are slow-moving (semi-annual measurement appropriate). Holding indefinitely on stale factor signals risks holding value traps.
 
-**Target holding period: 3-7 years per position.** Positions should be held unless explicit sell criteria are triggered (Section 6.3). The strategy is designed to avoid the "activity trap" of frequent trading, which (a) incurs stamp duty and spread costs, (b) crystallises capital gains tax, and (c) interrupts the compounding process that creates multibagger returns.
-
-**[REASONABLE ASSUMPTION]** The 3-7 year range is a compromise between Mayer's 10+ year ideal and the reality that UK small-cap factors decay post-2012 (Cotter & McGeever 2018), meaning holding indefinitely on stale factor signals is risky.
+#### Tier 2 (Conviction Holds): Patient compounding
+- **Target holding period:** 5-10+ years, or until business thesis breaks.
+- **Philosophy:** The factor screen identified the stock; now let the business compound. Factor score deterioration (e.g., rising valuation multiples as the stock appreciates) is NOT a sell trigger for Tier 2.
+- **[DATA SUPPORTS]** Mayer (2018) found 100-baggers required 10+ years. Farago & Hjalmarsson (2023) showed positive skewness of individual stock returns increases dramatically with holding period. The conviction carve-out is where this evidence is applied.
+- **Key discipline:** The 80/20 split means only 20% of capital is exposed to the patient-holding approach. If conviction hold judgment is poor, 80% of the portfolio is still systematically managed.
 
 ### 6.2 Rebalancing Rules
 
@@ -271,27 +314,41 @@ For the composite score applied in Step 5, each surviving stock receives a score
 
 ### 6.3 Sell Discipline
 
-**When to sell (hard triggers -- any ONE of these triggers a sale):**
+#### Tier 1 (Core Factor Portfolio) sell triggers:
 
-1. **Fundamental deterioration:** Two consecutive quarters of negative free cash flow AND gross profitability drops below the 30th percentile of the universe. **[REASONABLE ASSUMPTION]** A single bad quarter can be noise; two consecutive quarters of cash flow deterioration combined with declining profitability suggests structural rather than temporary problems.
+Any ONE of these triggers a sale:
 
-2. **Investment discipline violation:** Asset growth exceeds EBITDA growth by more than 20 percentage points for two consecutive fiscal years. **[DATA SUPPORTS]** Yartseva (2025) found returns drop 5-23% when investment exceeds EBITDA growth. Two years of dilutive growth suggests management is destroying value.
+1. **Composite score collapse:** The stock's composite score falls to the bottom 20% of the current eligible universe at a semi-annual rebalance. This is the primary mechanical sell trigger.
 
-3. **Excessive dilution:** Net shares outstanding increase by more than 15% in a single fiscal year. **[REASONABLE ASSUMPTION]** Large equity issuance dilutes existing shareholders and is associated with negative future returns (net equity issuance anomaly, documented in UK by Cotter & McGeever 2018).
+2. **Fundamental deterioration:** Two consecutive quarters of negative free cash flow AND gross profitability drops below the 30th percentile of the universe.
 
-4. **Valuation ceiling:** EV/EBITDA exceeds the 90th percentile of the broad market (not the filtered universe). **[REASONABLE ASSUMPTION]** At extreme valuations, the stock has likely already delivered much of its multibagger potential, and the risk/reward profile shifts unfavorably. This is a loose constraint -- it only triggers for genuinely expensive stocks.
+3. **Excessive dilution:** Net shares outstanding increase by more than 15% in a single fiscal year. **[DATA SUPPORTS]** Net equity issuance anomaly documented in UK by Cotter & McGeever (2018).
 
-5. **Composite score collapse:** The stock's composite score (Section 4.2) falls to the bottom 20% of the current eligible universe at a semi-annual rebalance. This catches cases where multiple factors deteriorate simultaneously.
+4. **Valuation ceiling:** EV/EBITDA exceeds the 90th percentile of the broad market. At extreme valuations, the risk/reward profile shifts unfavourably.
 
-**When NOT to sell (discipline requirements):**
+#### Tier 2 (Conviction Holds) sell triggers:
 
-1. **Short-term price declines:** A 20-30% drawdown from recent highs is NOT a sell signal if the fundamental thesis remains intact. **[DATA SUPPORTS]** Multibaggers routinely experience significant drawdowns during their 5-7 year appreciation. Selling on price weakness alone would systematically eliminate the portfolio's best future performers.
+Conviction holds use a **narrower, fundamentals-only** sell discipline. Factor score deterioration (e.g., stock becomes "expensive" after appreciating) is NOT a sell trigger.
 
-2. **Sector rotation or macro noise:** Sector-wide selloffs (e.g., "tech wreck" fears) that do not reflect company-specific fundamental deterioration.
+1. **Business thesis breaks:** Revenue declines for two consecutive fiscal years AND gross profitability drops below the 30th percentile. This is not a temporary setback; it is structural decline.
 
-3. **Missing a single quarterly earnings estimate:** Analyst estimates are unreliable for small caps, and single-quarter misses have low signal content for multi-year outcomes.
+2. **Excessive dilution:** Same as Tier 1 (>15% share count increase in one year).
 
-4. **Mean-reversion temptation:** If a stock doubles in year one, the temptation to sell is strong. Resist this unless a hard sell trigger is activated. **[DATA SUPPORTS]** The positive skewness of long-horizon returns (Farago & Hjalmarsson 2023) means that the expected value of continuing to hold a winning stock is significantly higher than the expected value of mean-reverting it.
+3. **Management red flags:** Material insider selling (>25% of holding by CEO/CFO), accounting restatements, or regulatory action.
+
+4. **Position size limit:** If a conviction hold grows to exceed 15% of total portfolio value, trim to 12%. This is the only price-based trigger -- it manages concentration risk, not thesis deterioration.
+
+**Demotion (Tier 2 → Tier 1):** If a conviction hold's fundamentals deteriorate but do not trigger a full sell, it can be demoted back to Tier 1 and subjected to standard factor-based rebalancing.
+
+#### When NOT to sell (both tiers):
+
+1. **Short-term price declines:** A 20-30% drawdown is NOT a sell signal if fundamentals remain intact.
+
+2. **Sector rotation or macro noise:** Sector-wide selloffs that do not reflect company-specific deterioration.
+
+3. **Missing a single quarterly earnings estimate:** Analyst estimates are unreliable for small caps.
+
+4. **Mean-reversion temptation (especially Tier 2):** If a conviction hold doubles, the temptation to sell is strong. Resist unless a sell trigger fires. **[DATA SUPPORTS]** Positive skewness of long-horizon returns (Farago & Hjalmarsson 2023) means the expected value of holding a winner exceeds mean-reverting it.
 
 ---
 
@@ -320,15 +377,11 @@ For the composite score applied in Step 5, each surviving stock receives a score
 - **Rationale:** During bear market recoveries, past losers surge due to their high option-like betas, creating the momentum crash. By downweighting momentum during these periods, the strategy avoids the crash mechanism while retaining fundamental factor exposure.
 - **[REASONABLE ASSUMPTION]** The specific thresholds (80th percentile volatility, 24-month lookback) are approximations of Daniel & Moskowitz's dynamic strategy, adapted for a practical semi-annual rebalancing schedule rather than continuous optimization.
 
-### 7.4 Interest Rate Regime Adjustment
+### 7.4 Interest Rate Awareness (Monitoring Only)
 
-**[DATA SUPPORTS]** Yartseva (2025) identified specific interest rate environments as significant predictors of multibagger returns. Small-cap and value factors are sensitive to rate environments; rising rate environments typically compress multiples for growth stocks but can benefit value stocks.
+Interest rates affect small-cap valuations and factor premiums. However, no evidence supports systematic factor weight adjustment based on rate regimes in UK equities. The Yartseva (2025) finding on interest rate sensitivity is US-specific and unreplicated.
 
-**Implementation:**
-- **Monitor Bank of England base rate trajectory (rising, stable, falling).**
-- **Falling rate environment:** Increase EV/EBITDA valuation weight modestly (from 10% to 15% of composite score) -- cheaper stocks benefit disproportionately when discount rates fall.
-- **Rising rate environment:** Increase FCF yield weight modestly (from 30% to 35%) -- cash flow generation becomes more valuable when financing costs rise, and companies dependent on external funding (low FCF) face headwinds.
-- **[SPECULATIVE]** The specific weight adjustments are not derived from Yartseva's coefficients (which are not published in sufficient detail for precise calibration). These are directionally correct adjustments based on the established relationship between discount rates and factor returns.
+**Implementation:** Monitor Bank of England base rate trajectory as context for interpreting portfolio performance. Do NOT adjust factor weights based on rate movements. If the rate environment changes materially (e.g., rates exceed 6% or fall below 1%), review the strategy's overall thesis but do not tinker with scoring weights -- this introduces discretionary timing that undermines the systematic approach.
 
 ---
 
@@ -343,12 +396,12 @@ For the composite score applied in Step 5, each surviving stock receives a score
 - **Transaction costs erode premiums significantly in UK small caps.** Stamp duty (0.5% Main Market) and AIM spreads (5-10x FTSE 100) create a meaningful drag.
 - **Factor premiums have been decaying post-2012 in the UK.** Cotter & McGeever (2018) documented diminished statistical significance for most anomalies over time, though profitability remained robust.
 
-### 8.2 What Are Reasonable Assumptions
+### 8.2 What Are Reasonable Expectations (After Applying Discount)
 
-- **[REASONABLE ASSUMPTION]** The composite factor strategy should deliver 3-6% annual gross alpha over a UK small-cap benchmark (FTSE Small Cap or AIM All-Share) over a full market cycle (7-10 years), based on combining the documented premiums for profitability (3.6%), momentum (~2-4% when not crashing), and value (3-5%) with appropriate diversification discounts and interaction effects. The discount from gross to net alpha after transaction costs is estimated at 1-2% annually.
-- **[REASONABLE ASSUMPTION]** From a portfolio of 25 stocks held for 5-7 years, 2-4 positions (8-16%) might deliver 3x+ returns, and 0-2 positions (0-8%) might deliver 5x+ returns. This is based on the factor-enriched hit rate being approximately 2-3x the base rate of wealth-creating stocks (4% per Bessembinder).
+- **[REASONABLE ASSUMPTION]** The Core Factor Portfolio (Tier 1) should deliver 1-3% annual net alpha over a UK small-cap benchmark over a full market cycle (7-10 years). This is based on historical gross premiums of 3-5% discounted by: (a) 58% post-publication decay (McLean & Pontiff 2016), (b) 1-2% annual transaction costs in UK small caps, and (c) the absence of UK-specific validation. This is deliberately conservative -- if the strategy cannot clear this lower bar, it should not be pursued.
+- **[HONEST LIMITATION]** No reliable estimate exists for how many positions will deliver multibagger returns. The factor screen increases exposure to the population from which multibaggers emerge, but the enrichment factor is unknown and unquantified. Assuming any specific number of 3x+ or 5x+ winners would be speculative.
 - **[REASONABLE ASSUMPTION]** The strategy will underperform in strong large-cap bull markets (when FTSE 100 mega-caps lead) and outperform when small-cap quality is rewarded. It will experience drawdowns of 30-50% during severe bear markets (UK small caps fell approximately 60% in 2008-2009).
-- **[REASONABLE ASSUMPTION]** Annual portfolio turnover of 25-35% implies 5-10 position changes per year, which is implementable for a personal investor managing their own portfolio.
+- **[REASONABLE ASSUMPTION]** Core Portfolio turnover of 25-35% annually implies 5-10 position changes per year, which is implementable for a personal investor. Conviction holds will have near-zero planned turnover.
 
 ### 8.3 What Is Speculative
 

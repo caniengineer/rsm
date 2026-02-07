@@ -6,44 +6,52 @@
 
 ## Executive Summary
 
-This research project designs an institutional-grade factor investing strategy aimed at identifying multi-bagger stocks (5x+ returns) in UK equities, grounded entirely in academic evidence from four mandatory source papers and extensive supporting literature.
+This is a **UK small-cap quality-value-momentum factor strategy** with a conviction hold carve-out. It is not a multibagger identification system -- no factor screen can reliably predict which specific stocks will deliver extreme returns. Instead, the strategy systematically buys cheap, profitable, trending UK small caps, generating factor-driven alpha while incidentally increasing exposure to the population from which multibaggers emerge.
 
 ### The Core Problem
 
-Most stocks destroy value. Bessembinder (2018, 2023) demonstrates that 57.4% of all US stocks underperform Treasury bills over their lifetimes, and only 2-4% of listed companies account for virtually all net stock market wealth creation. Internationally, the picture is worse — only 42.4% of stocks outperform bills across 57 countries. This means the base rate for successful stock picking is terrible, and the base rate for identifying a multi-bagger (5-10x return) is vanishingly small.
+Most stocks destroy value. Bessembinder (2018, 2023) demonstrates that 57.4% of all US stocks underperform Treasury bills over their lifetimes, and only 2-4% of listed companies account for virtually all net stock market wealth creation. Internationally, the picture is worse — only 42.4% of stocks outperform bills across 57 countries. The base rate for identifying a multi-bagger is vanishingly small, and no combination of factor screens has been demonstrated to raise this probability to reliably actionable levels.
 
-### What the Evidence Says
+### What the Evidence Supports
 
-After deep analysis of Yartseva (2025), Harvey, Liu & Zhu (2016), Bermejo et al. (2021), and extensive UK/European factor studies, the following evidence-led conclusions emerge:
+After analysis of Novy-Marx (2013), Harvey, Liu & Zhu (2016), Bermejo et al. (2021), Yartseva (2025), and extensive UK/European factor studies:
 
-**Factors that predict multi-bagger outcomes (strong evidence):**
-1. **Free Cash Flow Yield** — The single strongest predictor (Yartseva 2025, coefficient 46-82). Combines profitability and valuation in one metric.
-2. **Gross Profitability (GP/Assets)** — Most robust quality metric internationally (Novy-Marx 2013, Bermejo 2021 FF3 alpha 4.23%, t=10.88). Remains robust in UK when other anomalies decay.
-3. **Small Capitalisation** — Multi-baggers overwhelmingly start small (median $348m US; GBP 50-350m UK).
-4. **Moderate Valuation** — High book-to-market stocks in the multibagger universe returned +34.7% excess vs +12.8% for low-value (Yartseva). EV/EBITDA is the strongest European value metric (Bermejo).
-5. **Investment-EBITDA Growth Interaction** — Aggressive asset expansion is positive ONLY when supported by corresponding EBITDA growth; otherwise returns drop 5-23% (Yartseva).
-6. **Momentum** — Strongest pure factor in Europe (Sharpe 0.80, Bermejo). Confirmed in UK (Liu et al. 1999). Multi-factor combinations achieve Sharpe 0.94.
+**Factors with strong multi-source validation (used as core factors):**
+1. **Gross Profitability (GP/Assets)** — Most robust quality metric internationally (Novy-Marx 2013, Bermejo 2021 FF3 alpha 4.23% t=10.88, Cotter & McGeever 2018 UK persistence). Weight: 30%.
+2. **Valuation (EV/EBITDA)** — Strongest European value metric (Bermejo 2021). Value survives harshest multiple-testing corrections (Harvey et al. 2016). Weight: 25%.
+3. **Momentum (12-1 month)** — Strongest pure European factor (Sharpe 0.80, Bermejo). Confirmed in UK post-1977 (Liu et al. 1999). Weight: 20%.
 
-**Factors that do NOT predict multi-baggers (commonly believed but statistically insignificant):**
+**Factors with partial support (used as secondary checks):**
+4. **Free Cash Flow Yield** — Cash-based quality check (Fama & French 2018). Yartseva (2025) reports it as the strongest multibagger predictor, but this is a single unreplicated US study. Weight: 15%.
+5. **Small Cap Size** — Universe filter, not a return predictor (UK size premium reversed post-publication). Weight: 10%.
+
+**Factors excluded (insufficient independent evidence):**
+- Investment-EBITDA interaction (Yartseva only, no replication)
+- Contrarian momentum / near 52-week lows (Yartseva only, contradicts standard momentum)
+- Interest rate regime overlay (Yartseva only, US-specific)
+
+**Factors correctly rejected (statistically insignificant):**
 - Earnings growth, dividend policy, debt levels, share buybacks, analyst coverage, R&D intensity, Altman Z-scores (all: Yartseva 2025)
-
-**Statistical rigour (Harvey, Liu & Zhu 2016):**
-- Only 9 of 313 published factors survive t > 3.0 after multiple testing adjustment
-- 53% of published factors are likely false discoveries
-- All factors in this strategy meet or exceed the t > 3.0 threshold through multiple independent replications
 
 ### The Strategy
 
-The strategy targets UK-listed equities (Main Market + AIM) with market caps of GBP 30m-1,000m, using an iterative screening approach inspired by Bermejo et al. (2021):
+Two-tier portfolio targeting UK-listed equities (Main Market + AIM) with market caps of GBP 30m-1,000m:
 
+**Tier 1 — Core Factor Portfolio (80% of capital, 16-24 positions):**
 1. **Universe**: ~250-400 eligible UK stocks after liquidity and sector filters
-2. **Step 1 — Profitability Gate**: Require above-median Gross Profitability (GP/Assets)
-3. **Step 2 — Valuation Filter**: Require above-median Free Cash Flow Yield AND reasonable EV/EBITDA
-4. **Step 3 — Investment Discipline**: Require asset growth ≤ EBITDA growth (Yartseva's key interaction)
-5. **Step 4 — Momentum Confirmation**: Require positive 12-month price momentum (skip last month)
-6. **Result**: A concentrated portfolio of 20-40 stocks, rebalanced annually
+2. **Profitability Gate**: GP/Assets above 40th percentile
+3. **Cash Flow Gate**: Positive FCF, FCF yield above median
+4. **Valuation Filter**: EV/EBITDA below 60th percentile
+5. **Scoring & Selection**: Composite score (GP/Assets 30%, EV/EBITDA 25%, Momentum 20%, FCF Yield 15%, Size 10%)
+6. Semi-annual rebalancing. Average holding period ~3 years.
 
-**Target return profile**: Not a specific return promise — that would be speculative. Instead: systematic exposure to the factor characteristics that the wealth-creating minority of stocks disproportionately exhibits, with sufficient diversification to have a meaningful probability of owning the rare winners.
+**Tier 2 — Conviction Holds (20% of capital, 4-6 positions):**
+- Drawn from Tier 1 based on strongest fundamentals + qualitative business quality
+- Exempt from factor-based rebalancing
+- Held until business thesis breaks (5-10+ years)
+- This is where multibagger compounding can occur — if it occurs at all
+
+**Target return profile**: 1-3% net annual alpha over FTSE Small Cap Index from Tier 1 factor exposure. Tier 2 returns are unpredictable by design. No specific multibagger return promise is made.
 
 ### Critical Risks and Honest Limitations
 
@@ -116,15 +124,15 @@ Throughout all documents, evidence is classified as:
 
 ## Key Insight Summary
 
-| # | Insight | Source | Confidence |
-|---|---------|--------|------------|
-| 1 | FCF Yield is the strongest single predictor of multi-bagger returns | Yartseva 2025 | High |
-| 2 | Gross Profitability (GP/Assets) is the most robust quality metric internationally | Novy-Marx 2013, Bermejo 2021 | High |
-| 3 | Only 9 of 313 factors survive rigorous multiple-testing adjustment (t > 3.0) | Harvey et al. 2016 | High |
-| 4 | Iterative multi-factor combinations (value→quality→momentum) achieve Sharpe 0.94 | Bermejo et al. 2021 | High |
-| 5 | 57.4% of stocks underperform Treasury bills over their lifetimes | Bessembinder 2018 | High |
-| 6 | Earnings growth does NOT predict multi-bagger outcomes | Yartseva 2025 | High (counterintuitive) |
-| 7 | Asset growth is positive ONLY when supported by EBITDA growth | Yartseva 2025 | High |
-| 8 | UK size premium reversed post-publication (+6% → -6%) | Dimson & Marsh 1999 | High |
-| 9 | Factor alphas are decaying toward zero post-2012 | Bermejo 2021 | Moderate |
-| 10 | UK AIM market has structural liquidity constraints (5-10x wider spreads) | Multiple sources | High |
+| # | Insight | Source | Confidence | Strategy Implication |
+|---|---------|--------|------------|---------------------|
+| 1 | Gross Profitability (GP/Assets) is the most robust quality metric internationally | Novy-Marx 2013, Bermejo 2021, Cotter & McGeever 2018 | High | Core factor (30% weight) |
+| 2 | Only 9 of 313 factors survive rigorous multiple-testing adjustment (t > 3.0) | Harvey et al. 2016 | High | Use only multi-validated factors |
+| 3 | Iterative multi-factor combinations (value→quality→momentum) achieve Sharpe 0.94 | Bermejo et al. 2021 | High (European large-cap) | Structural approach adopted |
+| 4 | 57.4% of stocks underperform Treasury bills over their lifetimes | Bessembinder 2018 | High | Diversification is essential |
+| 5 | Earnings growth does NOT predict multi-bagger outcomes | Yartseva 2025 | High (counterintuitive) | Excluded from model |
+| 6 | UK size premium reversed post-publication (+6% → -6%) | Dimson & Marsh 1999 | High | Size as universe filter only |
+| 7 | Factor alphas are decaying toward zero post-2012 | Bermejo 2021 | Moderate | Alpha expectations reduced to 1-3% net |
+| 8 | UK AIM market has structural liquidity constraints (5-10x wider spreads) | Multiple sources | High | Strict liquidity filters applied |
+| 9 | Factor returns decline 58% post-publication | McLean & Pontiff 2016 | High | All gross premiums discounted |
+| 10 | Investment-EBITDA interaction is unreplicated | Yartseva 2025 only | Low | Excluded from scoring model |
