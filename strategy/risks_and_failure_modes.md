@@ -1,7 +1,7 @@
 # Risks and Failure Modes
 
-**Date:** 2026-02-07
-**Purpose:** Adversarial challenge to the proposed UK multi-factor multibagger strategy. This document is written from the perspective of a Skeptic/Risk Agent whose job is to find reasons this strategy will fail, not reasons it will succeed.
+**Date:** 2026-02-07 (revised post-audit)
+**Purpose:** Adversarial challenge to the proposed UK small-cap quality-value-momentum factor strategy. This document is written from the perspective of a Skeptic/Risk Agent whose job is to find reasons this strategy will fail, not reasons it will succeed. Revised to reflect the post-audit improvements documented in `strategy_improvements.md`.
 
 ---
 
@@ -13,10 +13,10 @@ These risks could individually render the strategy unviable. Any one of them, if
 
 ### CR-1: Survivorship Bias Invalidates the Core Thesis
 
-**Risk description:** The foundational study (Yartseva 2025) identified 464 stocks that *achieved* 10x returns, then examined their characteristics retrospectively. This is a textbook case of survivorship bias. The study does not, and cannot, tell us how many stocks *with identical starting characteristics* failed to deliver multibagger returns. The denominator -- the population of stocks that looked the same at the starting point but went to zero or underperformed -- is entirely absent from the analysis.
+**Risk description:** The foundational study (Yartseva 2025) identified 464 stocks that *achieved* 10x returns, then examined their characteristics retrospectively. This is a textbook case of survivorship bias. The study does not, and cannot, tell us how many stocks *with identical starting characteristics* failed to deliver extreme returns. The denominator -- the population of stocks that looked the same at the starting point but went to zero or underperformed -- is entirely absent from the analysis.
 
 **Evidence:**
-- Yartseva's sample is 464 winners out of the full NYSE/NASDAQ universe. The total number of stocks listed on those exchanges over 2009-2024 exceeds 10,000. We have no data on the thousands of small-cap, high-FCF-yield, high-profitability stocks that did not become multibaggers.
+- Yartseva's sample is 464 winners out of the full NYSE/NASDAQ universe. The total number of stocks listed on those exchanges over 2009-2024 exceeds 10,000. We have no data on the thousands of small-cap, high-FCF-yield, high-profitability stocks that did not deliver extreme returns.
 - AIM attrition: 1,694 companies (2007) to 679 (2025). More than 1,000 companies were delisted, most due to failure, acquisition at distressed prices, or regulatory removal. Any backtest that fails to include these deletions will dramatically overstate returns.
 - CRSP evidence shows survivorship bias overstates annual returns by 1.6% (7.4% vs 9.0%) in US datasets. In AIM, where failure rates are far higher, the bias could be 2-4% annually or more.
 - Gerakos, Lang & Maffett (2013): AIM-listed firms experience greater post-IPO underperformance than traditionally regulated exchanges, with performance indistinguishable from US OTC Pink Sheets.
@@ -29,21 +29,21 @@ These risks could individually render the strategy unviable. Any one of them, if
 
 ---
 
-### CR-2: Base Rate Neglect -- The Multibagger Probability is Vanishingly Low
+### CR-2: Base Rate Neglect -- The Extreme-Return Probability is Vanishingly Low
 
-**Risk description:** The strategy aims to identify stocks that will deliver 5-10x returns. The base rate for such outcomes is extremely low, and no combination of factor screens has been demonstrated to raise this probability to actionable levels.
+**Risk description:** The strategy is positioned in the population from which extreme returners emerge, but the base rate for such outcomes is extremely low, and no combination of factor screens has been demonstrated to raise this probability to actionable levels.
 
 **Evidence:**
 - Bessembinder (2018, 2023): 57.4-58.6% of ALL US stocks underperform Treasury bills over their lifetimes. Only 4% of stocks explain the entire net gain of the US stock market. Only 2% create 90% of aggregate wealth.
 - Fang et al. (2021): Internationally (including Europe/UK), the underperformance rate is *worse* -- average cross-country outperformance rate of only 42.4% vs 49.7% in the US.
-- Even if we generously assume 5% of small-cap stocks become multibaggers over a 15-year period, and even if factor screens double the hit rate to 10%, a concentrated portfolio of 20-40 stocks has a meaningful probability of containing zero multibaggers.
+- Even if we generously assume 5% of small-cap stocks become extreme returners over a 15-year period, and even if factor screens double the hit rate to 10%, a diversified portfolio of 25-40 stocks has a meaningful probability of containing zero such outcomes.
 - Bessembinder himself states: "It's very difficult to predict ahead of time which stocks are going to end up in the right tail."
 
 **Probability assessment:** High (70-80%). The base rate problem is mathematical. Unless the factor screens can demonstrably concentrate the portfolio in the 2-5% tail, the strategy will underperform broad market exposure on a risk-adjusted basis.
 
-**Mitigation:** Diversification across 30-50+ positions. But this creates a contradiction: broader diversification reduces multibagger exposure if you do hold one, converging toward index-like returns minus higher costs.
+**Mitigation:** Diversification across 25-40+ positions. But this creates a tension: broader diversification reduces extreme-return exposure if you do hold one, converging toward index-like returns minus higher costs.
 
-**Residual risk after mitigation:** High. The strategy's stated objective (5-10x returns) is in fundamental tension with the mathematical reality that such returns are rare and largely unpredictable.
+**Residual risk after mitigation:** High. The incidental multibagger exposure is a genuine optionality benefit, but the primary return driver must be factor premiums, not stock-picking for extreme returns.
 
 ---
 
@@ -53,7 +53,7 @@ These risks could individually render the strategy unviable. Any one of them, if
 
 **Evidence:**
 - Market structure differs fundamentally: AIM has no minimum market cap, no minimum free float, lighter regulation, and uses SETSqx (not continuous order-book trading) for 80% of its stocks.
-- Sector composition: US multibaggers are disproportionately drawn from technology (where explosive revenue growth drives rerating). UK public equity markets have far less technology exposure. FTSE 100 is dominated by financials, energy, consumer staples, and healthcare. AIM has more resources/mining exposure.
+- Sector composition: US extreme returners are disproportionately drawn from technology (where explosive revenue growth drives rerating). UK public equity markets have far less technology exposure. FTSE 100 is dominated by financials, energy, consumer staples, and healthcare. AIM has more resources/mining exposure.
 - Interest rate variable: Yartseva uses Federal Funds Rate as a macro control. The Bank of England's transmission mechanism, pace, and amplitude differ. UK monetary policy diverges from the Fed in both timing and magnitude (e.g., 2022-2024: different terminal rates, different speed of cuts).
 - Tax regime: UK stamp duty (0.5% on Main Market purchases) has no US equivalent. This affects trading volumes, price discovery, and optimal rebalancing frequency.
 - Foye (2018): The Fama-French five-factor model requires respecification for the UK (gross profit instead of operating profit). Even established factor models do not transfer cleanly.
@@ -82,7 +82,7 @@ These risks could individually render the strategy unviable. Any one of them, if
 
 **Mitigation:** Impose strict minimum liquidity thresholds (e.g., minimum daily turnover of GBP 50,000, maximum bid-ask spread of 5%). Use patient execution over days/weeks rather than immediate execution. Accept that the implementable universe is a small subset of the theoretical universe.
 
-**Residual risk after mitigation:** Moderate. Liquidity filters will exclude many of the stocks that screen best on the factors, creating an implementation gap between theoretical and realised returns. The strategy effectively becomes a mid-cap strategy with reduced multibagger potential.
+**Residual risk after mitigation:** Moderate. Liquidity filters will exclude many of the stocks that screen best on the factors, creating an implementation gap between theoretical and realised returns.
 
 ---
 
@@ -94,34 +94,53 @@ These risks could individually render the strategy unviable. Any one of them, if
 - Harvey, Liu & Zhu (2016): With 150+ tested variables, the t-statistic threshold for significance should be approximately 3.0, not the conventional 1.96. Many of Yartseva's reported results may not survive this higher bar.
 - FCF yield coefficient ranges from 46 to 82 across different specifications. A truly robust predictor should show coefficient stability. This degree of instability (nearly 2x range) suggests sensitivity to model specification.
 - GMM estimation with many instruments relative to sample size creates weak-instrument bias, which can generate spuriously significant results.
-- Only 2 years of out-of-sample testing (2023-2024). Two years is insufficient to validate a model intended to identify stocks that take 5-15 years to compound. The out-of-sample period covers a specific market regime (post-pandemic normalisation, AI boom) and tells us nothing about performance in other regimes.
-- McLean & Pontiff (2016): Academic factor returns are 26% lower out-of-sample, and 58% lower post-publication. If applied to Yartseva's coefficients, the strategy's expected alpha would shrink dramatically.
+- Only 2 years of out-of-sample testing (2023-2024). Two years is insufficient to validate a model intended for long-horizon investing. The out-of-sample period covers a specific market regime (post-pandemic normalisation, AI boom) and tells us nothing about performance in other regimes.
 
-**Probability assessment:** High (65-80%). The combination of many variables, limited sample, short out-of-sample period, and coefficient instability is a textbook recipe for overfit.
+**Post-audit update:** The Investment-EBITDA interaction term -- the single most suspicious factor in the original strategy, with no independent replication and reliance solely on Yartseva's 464-stock sample -- has been **removed entirely** from the strategy (weight reduced from 15% to 0%). This partially mitigates the overfitting risk, as the remaining factors (gross profitability, FCF yield, EV/EBITDA value, momentum) all have multiple independent replications across geographies and time periods (Novy-Marx 2013, Fama & French 2018, Bermejo et al. 2021, Asness et al. 2013). The strategy no longer stands or falls with any single unvalidated working paper.
 
-**Mitigation:** Focus only on factors with independent, pre-existing evidence from multiple studies and multiple markets (profitability, value, momentum, size). Discard factors unique to Yartseva or those with unstable coefficients. Accept lower expected returns in exchange for greater robustness.
+**Probability assessment:** Moderate-to-high (50-65%). Reduced from 65-80% because the most vulnerable factor has been dropped and all retained factors have independent support. However, the specific *combination* and *calibration* of these factors using Yartseva's framework remains a source of specification risk, and the FCF yield coefficient instability is still a concern.
 
-**Residual risk after mitigation:** Moderate. Even well-established factors show post-publication decay (see CR-6). Using only consensus factors reduces overfit risk but also reduces any edge over existing factor products.
+**Mitigation:** Focus only on factors with independent, pre-existing evidence from multiple studies and multiple markets (profitability, value, momentum). This has now been implemented -- every factor with non-zero weight has multiple independent replications. Accept lower expected returns in exchange for greater robustness.
+
+**Residual risk after mitigation:** Moderate. Even well-established factors show post-publication decay (see CR-7). Using only consensus factors reduces overfit risk but also reduces any edge over existing factor products.
 
 ---
 
-### CR-6: Factor Decay and Post-Publication Erosion
+### CR-6: Factor Decay and Secular Erosion
 
-**Risk description:** Even if the factors were historically valid, post-publication arbitrage and changing market structure may have eroded them to insignificance.
+**Risk description:** Even if the factors were historically valid, changing market structure, increased data availability, and the proliferation of quantitative strategies may have eroded factor premia to insignificance through arbitrage.
 
 **Evidence:**
-- Bermejo et al. (2021): Factor alphas were approaching zero after 2012 in their European sample.
-- McLean & Pontiff (2016): 26% lower out-of-sample, 58% lower post-publication. This is the single most devastating finding for any factor-based strategy.
 - Cotter & McGeever (2018): Most UK anomalies show diminished statistical significance over time. Of nine anomalies studied, only profitability and stock turnover remained robust through the full sample.
 - Dimson & Marsh (1999): The UK size premium reversed after publication -- from +6% to -6%. This is not a small decay; it is a complete sign reversal.
 - UK momentum significance declined markedly in Cotter & McGeever's sample period.
 - The asset growth anomaly is debated in Europe -- evidence is mixed between risk-based and mispricing explanations, and may vary by sub-period.
+- Increasing availability of factor-based ETFs and smart-beta products means more capital is chasing the same anomalies, reducing their prospective returns.
 
 **Probability assessment:** Moderate-to-high (55-70%). Not all factors decay equally (profitability appears most persistent), but the composite strategy relies on multiple factors, and if even half of them have decayed materially, the overall expected return is substantially impaired.
 
 **Mitigation:** Weight the strategy toward factors with the strongest persistence evidence (gross profitability, cash-based quality). Reduce reliance on size and pure value, which have the weakest recent track records in the UK. Monitor factor returns in real-time and compare to historical benchmarks.
 
 **Residual risk after mitigation:** Moderate. A profitability-dominant strategy is more defensible but is also more crowded (many "quality" funds exist). The edge, if any, is smaller.
+
+---
+
+### CR-7: Post-Publication Factor Decay
+
+**Risk description:** This is the single most important risk for any factor strategy. Even factors that were genuine in-sample become weaker once published, because (a) arbitrage capital flows toward documented anomalies, compressing spreads, and (b) publication creates a statistical selection bias -- only factors that appear significant get published, and regression to the mean guarantees weaker out-of-sample performance.
+
+**Evidence:**
+- McLean & Pontiff (2016): This is the definitive study. Across 97 published anomalies, returns were **26% lower out-of-sample** (after discovery but before publication) and **58% lower post-publication**. If applied to the strategy's expected gross factor premiums, the post-publication haircut alone would reduce a 3-5% gross premium to approximately 1.3-2.1%.
+- Bermejo et al. (2021): European factor alphas were **approaching zero after 2012**. This is directly relevant -- if European factor premia have already been arbitraged away, a UK factor strategy launched in 2026 is deploying into a post-arbitrage environment.
+- The 26% out-of-sample decay reflects statistical overfitting; the additional 32% post-publication decay (58% minus 26%) reflects genuine arbitrage. Both mechanisms apply to this strategy.
+- The strategy's core factors were published decades ago (value: Fama & French 1992; profitability: Novy-Marx 2013; momentum: Jegadeesh & Titman 1993). These are not newly discovered anomalies -- they have been subject to arbitrage pressure for years to decades.
+- The proliferation of factor-based ETFs, smart-beta products, and quantitative funds targeting the same anomalies means the strategy is competing against institutional capital with lower costs and faster execution.
+
+**Probability assessment:** High (70-80%). Post-publication decay is the best-documented and most robust finding in empirical asset pricing. The question is not whether decay has occurred, but how much remains. The strategy's reliance on factors published 10-30+ years ago, combined with Bermejo et al.'s finding that European alphas approached zero post-2012, makes this the most probable single cause of strategy failure.
+
+**Mitigation:** Limited. One can tilt toward the most persistent factors (profitability has shown the least decay), apply McLean & Pontiff haircuts to expected returns (the strategy improvements document already does this), and focus on less-liquid corners of the market where arbitrage is harder. But the fundamental force -- capital flowing toward documented anomalies -- cannot be reversed by a single small investor.
+
+**Residual risk after mitigation:** High. This risk is largely unmitigable. The honest response is to set performance expectations low (the revised strategy's base case of 0-1% net alpha reflects this) and to accept that the strategy may deliver returns indistinguishable from a simple UK small-cap quality ETF.
 
 ---
 
@@ -143,9 +162,11 @@ These risks will not individually break the strategy but will materially reduce 
 - Assuming 50% annual turnover, 0.5% stamp duty on Main Market purchases, and 2-3% round-trip costs on AIM small caps: estimated annual transaction cost drag of 1.5-3.0%.
 - If the gross factor premium is 3-5% annually, transaction costs consume 30-100% of the premium.
 
-**Probability assessment:** Near-certainty (>90%). Transaction costs are a known, quantifiable headwind.
+**Post-audit update:** The revised strategy now imposes a **2% annual all-in cost budget** as a hard rule (see `strategy_improvements.md` Section 7). If total costs exceed 2% of portfolio value in any calendar year, turnover in the Factor Sleeve must be reduced immediately (extend rebalancing to annual, raise score threshold for replacement). Additionally, the tightened screening gates -- **GBP 50m minimum market cap** (up from GBP 30m), **GBP 50k minimum daily traded value** (up from GBP 25k), and **3% maximum bid-ask spread** (down from 5%) -- are designed to exclude the most expensive-to-trade stocks from the investable universe. These mitigations should reduce the upper bound of the cost range, though they also reduce the universe size and potentially exclude some of the highest-factor-loading stocks.
 
-**Mitigation:** Focus on AIM (stamp duty exempt). Use annual rather than quarterly rebalancing. Implement patient execution strategies. Accept higher tracking error vs theoretical portfolio. Target slightly larger stocks within the small-cap universe.
+**Probability assessment:** Near-certainty (>90%). Transaction costs are a known, quantifiable headwind. The cost budget and tighter filters reduce the severity but not the certainty.
+
+**Mitigation:** Focus on AIM (stamp duty exempt). Use annual rather than quarterly rebalancing. Implement patient execution strategies. Accept higher tracking error vs theoretical portfolio. Target slightly larger stocks within the small-cap universe. The 2% cost budget and tightened screening gates provide structural discipline.
 
 ---
 
@@ -187,8 +208,7 @@ These risks will not individually break the strategy but will materially reduce 
 
 **Evidence:**
 - Harvey, Liu & Zhu (2016): The majority of claimed factor discoveries are likely false positives when properly adjusted for multiple testing. The threshold for statistical significance should be a t-statistic of approximately 3.0 for new factor claims.
-- The strategy uses specific interaction terms (Investment x EBITDA growth) that are derived from Yartseva's retrospective analysis. These interactions may be data artefacts specific to the 2009-2024 US sample.
-- Using Harvey et al.'s framework, the probability that the composite multi-factor screen has genuine out-of-sample predictive power for multibagger identification is much lower than naive backtest results would suggest.
+- Using Harvey et al.'s framework, the probability that the composite multi-factor screen has genuine out-of-sample predictive power is much lower than naive backtest results would suggest.
 
 **Probability assessment:** High (60-70%) that live performance will significantly disappoint relative to backtested results.
 
@@ -201,7 +221,7 @@ These risks will not individually break the strategy but will materially reduce 
 **Risk description:** The Yartseva sample period (2009-2024) is almost entirely a bull market: post-GFC recovery, unprecedented quantitative easing, near-zero interest rates for most of the period, and the AI/tech boom. There is no evidence these factors work in secular bear markets, stagflationary environments, or sustained high-rate regimes.
 
 **Evidence:**
-- Yartseva's interest rate dummy suggests strong regime dependence. The multibagger phenomenon may be substantially a product of the QE era.
+- Yartseva's interest rate dummy suggests strong regime dependence. The factor strategy's performance may be substantially a product of the QE era.
 - UK interest rates were effectively at or near zero for 2009-2021. The current (2024-2026) environment of 4-5% base rates is fundamentally different.
 - The 2009-2024 period saw one of the longest US bull markets in history. Selecting factors that worked during this specific regime tells us little about performance in a 1970s-style stagflation, a 2000-2002-style tech bust, or a prolonged bear market.
 - UK small caps have been in a relative bear market vs large caps for several years (persistent fund outflows). If the bull-market tailwind reverses, the strategy's returns could be significantly impaired.
@@ -294,9 +314,9 @@ The following conditions, individually or in combination, should trigger a full 
 
 3. **Transaction costs exceed gross factor returns for two consecutive years.** If the strategy cannot generate positive returns net of implementable costs, it is not a viable strategy regardless of theoretical attractiveness.
 
-4. **The investable universe (after liquidity and data quality filters) drops below 30 stocks.** Insufficient diversification to manage the base rate problem. The portfolio becomes an uncompensated concentrated bet.
+4. **The investable universe (after liquidity and data quality filters) drops below 40 stocks.** Insufficient diversification to manage the base rate problem and UK small-cap failure rates. The portfolio becomes an uncompensated concentrated bet.
 
-5. **A rigorous, survivorship-free backtest using UK data shows no statistically significant outperformance (t-statistic < 2.0) over the available sample period.** If the strategy does not work even in-sample with clean data, it certainly will not work out-of-sample.
+5. **A rigorous, survivorship-free backtest using UK data shows no statistically significant outperformance (t-statistic < 2.0) over the available sample period.** If the strategy does not work even in-sample with clean data, it certainly will not work out-of-sample. The kill switch criteria in `strategy_design_plan.md` Section 8.4 are binding commitments, not aspirational guidelines.
 
 ### Soft Invalidation Criteria (Trigger for Reduced Allocation)
 
@@ -304,9 +324,9 @@ The following conditions, individually or in combination, should trigger a full 
 
 7. **Factor correlations with existing UK small-cap index funds exceed 0.85.** The strategy is not adding meaningful differentiation; cheaper index exposure is preferable.
 
-8. **More than 50% of positions hit stop-losses or delist within 2 years of purchase.** The screening process is not adequately filtering for survival, let alone multibagger potential.
+8. **More than 50% of positions hit stop-losses or delist within 2 years of purchase.** The screening process is not adequately filtering for survival.
 
-9. **Post-publication evidence accumulates that 3 or more of the core factors (profitability, FCF yield, value, momentum, investment-EBITDA interaction) lose statistical significance in international datasets.** The academic consensus supporting the factor model has eroded.
+9. **Post-publication evidence accumulates that 3 or more of the core factors (profitability, FCF yield, value, momentum) lose statistical significance in international datasets.** The academic consensus supporting the factor model has eroded.
 
 ---
 
@@ -318,8 +338,9 @@ The following conditions, individually or in combination, should trigger a full 
 | CR-2 | Base rate neglect | Strategy-breaking | 70-80% | Permanent | Weakly |
 | CR-3 | US-to-UK translation | Strategy-breaking | 60-75% | Permanent | Partially |
 | CR-4 | Illiquidity | Strategy-breaking | 70-85% | Permanent | Partially |
-| CR-5 | Overfitting | Strategy-breaking | 65-80% | Permanent | Partially |
-| CR-6 | Factor decay | Strategy-breaking | 55-70% | Medium-term | Partially |
+| CR-5 | Overfitting | Strategy-breaking | 50-65% | Permanent | Partially |
+| CR-6 | Factor decay (secular) | Strategy-breaking | 55-70% | Medium-term | Partially |
+| CR-7 | Post-publication decay | Strategy-breaking | 70-80% | Permanent | Weakly |
 | SR-1 | Transaction costs | Performance-degrading | >90% | Permanent | Partially |
 | SR-2 | Momentum crashes | Performance-degrading | 30-50% (5yr) | Episodic | Yes |
 | SR-3 | De-equitisation | Performance-degrading | 60-75% | Long-term | No |
@@ -327,4 +348,4 @@ The following conditions, individually or in combination, should trigger a full 
 | SR-5 | Regime dependence | Performance-degrading | 40-60% | Unknown | Partially |
 | SR-6 | Capacity limits | Performance-degrading | 70-80% | Permanent | No |
 
-**Overall assessment:** The strategy faces a preponderance of high-probability, partially-mitigable risks. The combination of survivorship bias in the source research, extreme base rate challenges, cross-market translation issues, and implementation frictions in UK small caps creates a situation where the gap between theoretical attractiveness and achievable live performance is likely very large. The strategy proponent should be required to demonstrate, with survivorship-free UK data and realistic transaction cost assumptions, that the composite factor model generates statistically significant and economically meaningful net returns before any capital is committed.
+**Overall assessment:** The strategy has been revised post-audit to address several critical weaknesses: the unreplicated Investment-EBITDA interaction has been removed (reducing overfitting risk), liquidity filters have been tightened (GBP 50m min market cap, GBP 50k min traded value, 3% max spread), explicit cost discipline has been added (2% annual budget), and binding kill switch criteria have been established. These improvements meaningfully reduce the probability of the most controllable risks (CR-5, SR-1) and demonstrate intellectual honesty about the strategy's limitations. However, the fundamental challenges remain largely unmitigated: post-publication factor decay (CR-7) is the single most probable cause of strategy failure, and the McLean & Pontiff 58% haircut combined with Bermejo et al.'s finding of European alphas approaching zero post-2012 suggests that the strategy may be deploying into an environment where the premia it seeks have already been substantially arbitraged away. UK-specific implementation costs (stamp duty, AIM spreads, SETSqx microstructure) consume a large fraction of whatever gross premium remains. And the base rate problem (CR-2) is mathematical, not addressable by better factor selection. The revised strategy's honest base-case expectation of 0-1% net alpha appropriately reflects these realities. The strategy proponent should be required to demonstrate, with survivorship-free UK data and realistic transaction cost assumptions, that the composite factor model generates statistically significant and economically meaningful net returns before any capital is committed.

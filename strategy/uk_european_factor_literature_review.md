@@ -130,6 +130,8 @@ The crash mechanism: past loser stocks surge during bear market recoveries due t
 
 **[INFERENCE]** For UK small/mid-cap investing, the investment discipline signal is best used as a **screening overlay** rather than a standalone factor -- avoid companies aggressively expanding assets without commensurate EBITDA growth, especially loss-making firms. The premium is stronger in small caps and interacts with profitability.
 
+**NOTE:** The Investment-EBITDA interaction term from Yartseva (2025) has been removed from the strategy. This section documents the standalone asset growth anomaly evidence, which remains relevant as a screening overlay. The specific interaction term (requiring EBITDA growth to match asset growth) is a single-study finding with no independent replication and is treated as unvalidated.
+
 ---
 
 ## 6. UK Market Structure: AIM vs Main Market
@@ -202,7 +204,7 @@ The crash mechanism: past loser stocks surge during bear market recoveries due t
 
 **[DIRECT EVIDENCE]** Farago & Hjalmarsson (2023), "Long-Horizon Stock Returns Are Positively Skewed," *Review of Finance*: At long horizons, multiplicative compounding induces **strong-to-extreme positive skewness** into individual stock returns. The skewness of 5-year returns can exceed 10; 30-year skewness can be in the millions. This is driven primarily by single-period volatility, making individual stocks far more skewed than aggregate markets.
 
-**[INFERENCE]** The combination of Yartseva's factor findings and Stockopedia's UK evidence suggests that multi-baggers in UK equities are most likely found among: small caps (GBP 50m-350m) with high gross profitability, low debt, moderate valuations, demonstrable sales growth, and asset expansion backed by earnings growth. Innovation is less important than scalability and execution.
+The evidence describes characteristics that extreme winners tend to exhibit retrospectively, but does not establish prospective predictive power for identifying which specific stocks will deliver extreme returns. The strategy uses these characteristics as factor tilts to improve average cross-sectional returns, not as a stock-picking tool for extreme outcomes.
 
 ---
 
@@ -369,7 +371,7 @@ Based on the combined evidence, the following factor interaction framework emerg
 
 ### Secondary Factors (Moderate Evidence)
 
-4. **Investment Discipline** [DIRECT EVIDENCE]: Asset growth anomaly exists in Europe but is conditional. Aggressive asset growth is positive ONLY when accompanied by EBITDA growth (Yartseva, 2025). Conservative investment without growth opportunity is a weak signal. Screen for: asset growth > 0 AND EBITDA growth >= asset growth rate.
+4. **Investment Discipline** [DIRECT EVIDENCE]: The standalone asset growth anomaly exists in Europe (Papanastasopoulos 2017). Avoid companies with aggressive asset growth, especially loss-making firms. The Yartseva-specific EBITDA interaction term has been removed from the strategy due to lack of replication.
 
 5. **Valuation Floor** [RELATED EVIDENCE]: Moderate valuations (P/E < 15-20x) at entry improve multi-bagger odds. Extreme cheapness (deep value) is less important than reasonable price combined with quality.
 
@@ -387,4 +389,4 @@ Based on the combined evidence, the following factor interaction framework emerg
 
 10. **Liquidity Floor**: Minimum daily traded value threshold to ensure implementability. Avoid the least liquid AIM stocks where 20-40% spreads would consume factor premiums.
 
-11. **Diversification Insurance**: Given Bessembinder's finding that only 2-4% of stocks create net wealth, any concentrated strategy carries extreme selection risk. Maintain sufficient diversification (20-40 positions minimum) to have meaningful probability of owning wealth creators.
+11. **Diversification Insurance**: Given Bessembinder's finding that only 2-4% of stocks create net wealth, any concentrated strategy carries extreme selection risk. Maintain sufficient diversification (25-35 positions) to have meaningful probability of owning wealth creators.

@@ -2,7 +2,7 @@
 
 > Factors below have been tested in rigorous academic studies and found to be either
 > statistically insignificant, unreliable post-publication, or lacking incremental explanatory
-> power for multibagger stock identification. Including these in a screening model would add
+> power for UK small-cap factor strategy screening. Including these in a screening model would add
 > noise, complexity, and false confidence without improving returns.
 
 ---
@@ -33,7 +33,7 @@
 **Source:** Yartseva (2025)
 **Why Rejected/Weak:** Debt levels are not predictive of multibagger returns. Neither high leverage (which some theories predict should amplify equity returns) nor low leverage (which signals financial conservatism) meaningfully predicts which stocks become multibaggers. The signal is dominated by FCF yield, profitability, and value metrics.
 **Common Misconception:** Investors often use debt screens as a "safety" filter, assuming low-debt companies are safer and more likely to survive. While extreme leverage certainly increases bankruptcy risk, moderate variations in debt levels do not discriminate between future multibaggers and average stocks. The Altman Z-score finding (see below) corroborates this -- financial distress measures add nothing.
-**Implications:** Do not use debt-to-equity or net-debt/EBITDA as a primary screen. If desired as a risk management guardrail, apply it only as a loose exclusion (e.g., exclude companies with net debt > 5x EBITDA) rather than as a scoring factor. The investment-EBITDA interaction term is a far better measure of whether a company's financial structure is healthy.
+**Implications:** Do not use debt-to-equity or net-debt/EBITDA as a primary screen. If desired as a risk management guardrail, apply it only as a loose exclusion (e.g., exclude companies with net debt > 5x EBITDA) rather than as a scoring factor. The profitability gate (GP/Assets > 40th percentile) and asset growth screening overlay are better measures of whether a company's financial structure is healthy.
 
 ---
 
@@ -43,7 +43,7 @@
 **Source:** Yartseva (2025)
 **Why Rejected/Weak:** Share buyback activity is not a significant predictor of multibagger returns. Companies that repurchase shares do not systematically outperform those that do not, within the multibagger-candidate universe. This is notable because buybacks are often cited as a shareholder-friendly capital allocation signal.
 **Common Misconception:** The narrative that buybacks "signal undervaluation" and "increase EPS by reducing share count" is popular among investors. While individual buyback announcements may generate short-term positive returns, the aggregate buyback signal does not distinguish future multibaggers. Many companies buy back shares at overvalued prices, and the EPS accretion effect is mechanical rather than value-creating.
-**Implications:** Do not include net buyback yield or share count reduction in the factor model. If management capital allocation quality is important (and it is), the investment-EBITDA growth interaction is a more rigorous way to measure it.
+**Implications:** Do not include net buyback yield or share count reduction in the factor model. If management capital allocation quality is important (and it is), the profitability gate and asset growth screening overlay (avoiding aggressive asset growth in loss-making firms) are more rigorous ways to measure it.
 
 ---
 
@@ -103,7 +103,23 @@
 **Source:** Harvey, Liu & Zhu (2016) -- "...and the Cross-Section of Expected Returns"; Jensen, Kelly & Pedersen (2023) -- factor taxonomy
 **Why Rejected/Weak:** Of the 313+ factors catalogued in the academic literature as of 2016, Harvey, Liu & Zhu estimate that 53% are likely false discoveries -- artefacts of data mining, p-hacking, and publication bias. Only 9 factors survive a t-statistic threshold of 3.0 (the minimum the authors recommend for new discoveries). Only 2 -- Value (HML) and Momentum (MOM) -- survive the most stringent 0.1% significance threshold. Jensen, Kelly & Pedersen (2023) confirm that the 300+ factors cluster into just 13 themes, of which only 10 are statistically significant. The vast majority of individually named factors (accruals anomaly, post-earnings-announcement drift, asset growth, investment-to-assets, net stock issuance, etc.) are either subsumed by the core themes or are outright false discoveries.
 **Common Misconception:** Each new factor paper seems to identify a "new anomaly" with a compelling economic story and a statistically significant backtest. Practitioners accumulate these factors in increasingly complex models, believing that more factors equal more alpha. In reality, most of these factors share the same underlying information (value, momentum, profitability, investment, size), and adding them increases overfitting risk without improving out-of-sample performance.
-**Implications:** Resist the temptation to add complexity. The validated factors in this strategy (FCF yield, GPA, momentum, value, and the investment-EBITDA interaction) cover the core themes identified by Jensen et al. Adding dozens of additional factors would increase data requirements, computational complexity, and false-positive risk without meaningful improvement. Any new candidate factor must meet the Harvey et al. threshold of t > 3.0 before inclusion.
+**Implications:** Resist the temptation to add complexity. The validated factors in this strategy (FCF yield, GPA, momentum, value, and the CMA/asset growth anomaly) cover the core themes identified by Jensen et al. Adding dozens of additional factors would increase data requirements, computational complexity, and false-positive risk without meaningful improvement. Any new candidate factor must meet the Harvey et al. threshold of t > 3.0 before inclusion.
+
+---
+
+## 11. Investment-EBITDA Growth Interaction
+
+**Title:** Capital Investment Conditional on Earnings Growth (Investment-EBITDA Interaction)
+**Source:** Yartseva (2025) only
+**Why Rejected:**
+- Single unreplicated study -- no independent validation in any market
+- The "100% of cases" claim is a statistical red flag suggesting overfitting or an extremely small subsample
+- Yartseva tested 150+ variables on 464 stocks, creating severe multiple testing risk (Harvey et al. 2016 would require t > 3.0)
+- Not tested in UK or European data
+- Papanastasopoulos (2017) found the European asset growth anomaly is more pronounced in loss-making firms -- the opposite direction from what a positive Investment-EBITDA interaction would predict
+- The standalone asset growth anomaly (CMA factor) provides the relevant information without the unreplicated interaction term
+**Common Misconception:** The narrative that "investment is good when supported by earnings growth" is intuitively appealing, but this specific statistical interaction has been found in only one retrospective study of winners.
+**Implications:** Use the standalone CMA/asset growth anomaly as a screening overlay (avoid aggressive asset growth in loss-making firms) rather than this specific interaction term. The profitability gate (GP/Assets > 40th percentile) already filters for the quality dimension.
 
 ---
 
@@ -113,11 +129,12 @@
 |---|---|---|---|
 | Earnings Growth | Reject | Not significant (Yartseva) | FCF Yield |
 | Dividend Policy | Reject | Irrelevant (Yartseva) | None needed |
-| Debt Levels | Reject | Not predictive (Yartseva) | Inv x EBITDA interaction |
-| Share Buybacks | Reject | Not significant (Yartseva) | Inv x EBITDA interaction |
+| Debt Levels | Reject | Not predictive (Yartseva) | Profitability gate + asset growth overlay |
+| Share Buybacks | Reject | Not significant (Yartseva) | Profitability gate + asset growth overlay |
 | Analyst Coverage | Reject | Subsumed by market cap | Small-cap universe filter |
 | R&D Intensity | Reject | No correlation (Yartseva) | GPA |
 | ROE | Reject | Weakest profitability metric | GPA |
 | Raw Size Premium | Reject as factor | Reversed post-publication | Use as universe filter only |
 | Altman Z-Score | Reject | Not significant (Yartseva) | FCF > 0 as survival check |
 | Factor Zoo (300+) | Reject most | 53% false discoveries | Core 5-6 validated factors |
+| Investment-EBITDA Interaction | Reject | Unreplicated; overfitting risk | CMA/asset growth overlay + profitability gate |

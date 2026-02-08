@@ -1,7 +1,7 @@
 # Assumptions and Unknowns
 
-**Date:** 2026-02-07
-**Purpose:** Exhaustive catalogue of every assumption -- stated or unstated -- embedded in the proposed UK multi-factor multibagger strategy, every known unknown, plausible unknown unknowns, and every gap in the evidence base. This document is written from the perspective of a Skeptic/Risk Agent.
+**Date:** 2026-02-07 (revised post-audit)
+**Purpose:** Exhaustive catalogue of every assumption -- stated or unstated -- embedded in the proposed UK small-cap quality-value-momentum factor strategy, every known unknown, plausible unknown unknowns, and every gap in the evidence base. This document is written from the perspective of a Skeptic/Risk Agent.
 
 ---
 
@@ -50,30 +50,30 @@ Each assumption below is something the strategy takes as given, either explicitl
 
 ---
 
-### A-3: Small-cap stocks are the right hunting ground for multibaggers
+### A-3: Small-cap stocks are the right hunting ground for a factor strategy seeking extreme winners
 
 **Evidence FOR:**
-- Yartseva (2025): Multibaggers overwhelmingly start as small caps.
+- Yartseva (2025): Extreme winners overwhelmingly start as small caps.
 - Mayer (2018): Median starting market cap for 100-baggers was approximately $500 million.
 - Stockopedia UK evidence: Top UK winners started at GBP 50-350 million market cap.
 - Mathematical necessity: A GBP 5 billion company achieving 10x requires becoming GBP 50 billion, which is top-10 FTSE 100 territory. A GBP 100 million company achieving 10x becomes GBP 1 billion, which is merely FTSE 250.
 - Fama-French SMB premium is larger in profitable small caps.
 
 **Evidence AGAINST:**
-- Small caps have much higher failure rates. For every small-cap multibagger, there are dozens of small-cap stocks that delist, go bankrupt, or stagnate.
+- Small caps have much higher failure rates. For every small-cap extreme winner, there are dozens of small-cap stocks that delist, go bankrupt, or stagnate.
 - The UK size premium reversed post-publication (Dimson & Marsh, 1999).
 - UK small caps have experienced persistent fund outflows (GBP 4 billion over two years), structural de-equitisation, and declining liquidity.
 - Survivorship bias is most acute in small caps, where attrition rates are highest.
 - Small caps are where data quality is worst, transaction costs highest, and capacity most constrained.
 
-**Verdict:** SUPPORTED for the mechanical premise (multibaggers must start small) but NOT SUPPORTED for the investment premise (investing in small caps will lead to multibagger returns). The distinction between "multibaggers are found among small caps" and "small caps produce multibagger returns" is critical. The former is a tautology; the latter is an unproven claim about forward-looking probabilities.
+**Verdict:** SUPPORTED for the mechanical premise (extreme winners must start small) but NOT SUPPORTED for the investment premise (investing in small caps will lead to extreme returns). The distinction between "extreme winners are found among small caps" and "small caps produce extreme returns" is critical. The former is a tautology; the latter is an unproven claim about forward-looking probabilities.
 
 ---
 
 ### A-4: Free cash flow yield is a reliable predictor of extreme positive returns
 
 **Evidence FOR:**
-- Yartseva (2025): FCF yield is the strongest single predictor in the multibagger model.
+- Yartseva (2025): FCF yield is the strongest single predictor in the factor model.
 - Fama & French (2018): Cash-based operating profitability dominates accrual-based measures.
 - NBIM (2015): Cash flow over assets had a Sharpe ratio of 0.7 globally.
 
@@ -81,7 +81,7 @@ Each assumption below is something the strategy takes as given, either explicitl
 - Yartseva's FCF yield coefficient ranges from 46 to 82 across specifications. This is not the behaviour of a stable, reliable predictor. It suggests the coefficient is sensitive to model specification, sample period, or both.
 - FCF yield is a backward-looking measure. High current FCF does not guarantee future FCF, especially in small caps where business models are evolving.
 - FCF can be temporarily inflated by cutting capex, deferring maintenance, or running down working capital -- all of which boost short-term FCF at the expense of long-term value.
-- There is no direct UK evidence cited for FCF yield as a multibagger predictor. The entire evidence base is US.
+- There is no direct UK evidence cited for FCF yield as a predictor of extreme returns. The entire evidence base is US.
 - High FCF yield in small caps may proxy for distress (low market cap relative to cash flows because the market perceives the cash flows as unsustainable).
 
 **Verdict:** PARTIALLY SUPPORTED. FCF yield is a reasonable quality/value measure, but its specific power to predict *extreme* positive returns (as opposed to modest above-average returns) is unproven outside the Yartseva sample, and the coefficient instability is concerning.
@@ -101,24 +101,24 @@ Each assumption below is something the strategy takes as given, either explicitl
 - Defining "EBITDA growth supporting asset growth" requires a judgement call on timing: do you measure EBITDA growth contemporaneously, 1-year lag, 2-year lag? Different choices will give different results.
 - Papanastasopoulos (2017): The asset growth anomaly in Europe is more pronounced in loss-making firms and dampened in profitable firms -- the opposite of what a positive Investment-EBITDA interaction would predict.
 
-**Verdict:** WEAKLY SUPPORTED / LIKELY OVERFIT. This is the most suspicious component of the strategy. An interaction term found in a single retrospective study of winners, with no independent replication, should be treated with extreme skepticism. At best, it is a heuristic ("invest in companies that grow assets while also growing earnings"). At worst, it is noise.
+**Verdict:** REMOVED FROM STRATEGY. This factor has been dropped entirely from the revised strategy due to: (1) single unreplicated study as the sole source, (2) the "100% of cases" claim being a red flag for overfitting or sample selection, (3) no UK or European replication whatsoever, and (4) contradictory evidence from Papanastasopoulos (2017) showing the opposite pattern in European data. The investment discipline signal is now captured only through a standalone CMA/asset growth screening overlay applied conservatively, without the EBITDA interaction term.
 
 ---
 
-### A-6: Annual rebalancing is sufficient
+### A-6: Rebalancing frequency is appropriate for the factors used
 
 **Evidence FOR:**
-- Annual rebalancing reduces transaction costs relative to monthly or quarterly rebalancing.
 - Value and profitability factors are slow-moving and do not require frequent rebalancing.
 - Lower turnover reduces stamp duty and spread costs.
+- The revised two-sleeve architecture now differentiates rebalancing by purpose: Factor Sleeve rebalances semi-annually, Compounding Sleeve holds indefinitely.
 
 **Evidence AGAINST:**
-- Momentum signals have shorter half-lives (3-12 months). Annual rebalancing may capture only a fraction of the momentum premium or may enter/exit too late.
+- Momentum signals have shorter half-lives (3-12 months). Even semi-annual rebalancing may capture only a fraction of the momentum premium.
 - Company fundamentals can deteriorate rapidly in small caps. A stock that screens well in January may be in financial distress by July.
-- Annual rebalancing creates calendar effects and potential front-running by other market participants who know when the portfolio will trade.
-- The interaction between annual rebalancing and illiquid AIM stocks may create forced trades at unfavourable prices at rebalancing dates.
+- Rebalancing creates calendar effects and potential front-running by other market participants who know when the portfolio will trade.
+- The interaction between scheduled rebalancing and illiquid AIM stocks may create forced trades at unfavourable prices at rebalancing dates.
 
-**Verdict:** PARTIALLY SUPPORTED for value/profitability, NOT SUPPORTED for momentum. The strategy cannot credibly include momentum as a factor while rebalancing annually. Either momentum must be rebalanced more frequently (increasing costs) or excluded (reducing theoretical returns).
+**Verdict:** RESOLVED. The two-sleeve architecture now addresses the previous contradiction. The Factor Sleeve uses semi-annual rebalancing (appropriate for value and profitability signals). The Compounding Sleeve holds indefinitely (no rebalancing conflict). Momentum is monitored quarterly as an overlay within the Factor Sleeve, allowing more timely response to momentum signal decay without requiring full portfolio turnover. This is a material improvement over the original annual rebalancing approach, though the momentum implementation remains a compromise.
 
 ---
 
@@ -140,19 +140,20 @@ Each assumption below is something the strategy takes as given, either explicitl
 
 ---
 
-### A-8: A 20-40 stock portfolio provides sufficient diversification
+### A-8: A 25-35 stock portfolio provides sufficient diversification
 
 **Evidence FOR:**
 - Classic portfolio theory suggests 20-30 stocks eliminates most idiosyncratic risk.
-- Concentration is needed to achieve multibagger returns (a 100-stock portfolio with one 10-bagger only delivers 10% at the portfolio level from that winner).
+- The wider range (25-35, up from the original 20-30) compensates for higher UK small-cap failure rates.
+- The two-sleeve architecture partially resolves the concentration vs diversification tension: the Factor Sleeve is diversified (15-20 positions) while the Compounding Sleeve is concentrated (5-10 graduates that have already demonstrated quality through factor persistence).
 
 **Evidence AGAINST:**
-- Bessembinder's findings demolish the classic diversification argument for return-seeking portfolios. If only 2-4% of stocks create net wealth, a 30-stock portfolio has roughly a 30-70% probability of containing zero wealth-creators (depending on the assumed hit rate and independence of selection).
+- Bessembinder's findings challenge the classic diversification argument for return-seeking portfolios. If only 2-4% of stocks create net wealth, a 30-stock portfolio has roughly a 30-70% probability of containing zero wealth-creators (depending on the assumed hit rate and independence of selection).
 - Small-cap stocks are more idiosyncratically volatile than large caps, so more positions are needed to achieve equivalent diversification.
 - The strategy's factor screens may inadvertently concentrate the portfolio in correlated sectors (e.g., UK small-cap industrials or consumer services), reducing effective diversification even with 30+ names.
-- A single multibagger in a 40-stock portfolio contributes at most 2.5% initial weight. Even with 10x returns, it becomes approximately 20% of the portfolio (assuming other positions are flat). This is a meaningful contribution but far from the "multibagger portfolio" narrative.
+- A single extreme winner in a 35-stock portfolio contributes at most approximately 2.9% initial weight. Even with 10x returns, it becomes approximately 22% of the portfolio (assuming other positions are flat). This is a meaningful contribution but does not transform overall portfolio returns.
 
-**Verdict:** PROBLEMATIC. There is an inherent contradiction between diversification (needed to manage the base rate problem) and concentration (needed to benefit meaningfully from multibaggers). The strategy cannot resolve this tension. It is attempting to be both a factor tilt and a multibagger hunter, and it cannot optimally be both.
+**Verdict:** PARTIALLY RESOLVED. The two-sleeve architecture reduces the tension between diversification and concentration. The Factor Sleeve provides broad factor exposure across 15-20 positions, while the Compounding Sleeve allows concentrated positions in proven winners (5-10 graduates). The 25-35 total range is more defensible than the original 20-40 range for UK small caps, though the fundamental Bessembinder challenge remains.
 
 ---
 
@@ -173,20 +174,22 @@ Each assumption below is something the strategy takes as given, either explicitl
 
 ---
 
-### A-10: Patient holding (5-15 years) will allow multibagger returns to compound
+### A-10: The two-sleeve architecture allows both factor rebalancing and patient compounding
 
 **Evidence FOR:**
-- Mayer (2018): 100-baggers required at least 10 years of patient holding.
-- Farago & Hjalmarsson (2023): Positive skewness in individual stock returns increases dramatically with holding period.
-- Compounding is a mathematical identity. If a stock grows at 15% annually, it doubles in approximately 5 years and reaches 4x in 10 years.
+- The two-sleeve model explicitly separates the rebalancing function (Factor Sleeve, semi-annual) from the compounding function (Compounding Sleeve, hold indefinitely).
+- This resolves the internal contradiction in the original strategy, which simultaneously prescribed annual rebalancing and 5-15 year patient holding.
+- Compounding Sleeve graduates are selected based on demonstrated factor persistence and fundamental trajectory, not just initial screening.
+- Mayer (2018): 100-baggers required at least 10 years of patient holding. The Compounding Sleeve is designed to accommodate this.
+- Farago & Hjalmarsson (2023): Positive skewness in individual stock returns increases dramatically with holding period. The Compounding Sleeve captures this.
 
 **Evidence AGAINST:**
-- Patient holding requires the investor to tolerate significant intermediate drawdowns. Many 10x stocks experienced 50-70% drawdowns along the way. Few investors can sustain this psychologically.
-- The strategy says "hold for 5-15 years" but also includes annual rebalancing. These are contradictory. Rebalancing means selling winners and buying new positions, which mechanically prevents multibagger compounding.
-- Regime changes over 10-15 years can invalidate the original investment thesis. A stock that screens well in 2026 may face a fundamentally different competitive, regulatory, or macroeconomic environment by 2036.
-- Opportunity cost: capital locked in underperformers for 10 years while waiting for a "multibagger" scenario that may never materialise is capital that could have been deployed elsewhere.
+- Patient holding in the Compounding Sleeve still requires the investor to tolerate significant intermediate drawdowns. Many extreme winners experienced 50-70% drawdowns along the way.
+- Regime changes over 10-15 years can invalidate the original investment thesis. A stock that graduates to the Compounding Sleeve in 2026 may face a fundamentally different competitive, regulatory, or macroeconomic environment by 2036.
+- Opportunity cost: capital locked in the Compounding Sleeve in underperformers while waiting for extreme compounding that may never materialise is capital that could have been deployed elsewhere.
+- The graduation criteria from Factor Sleeve to Compounding Sleeve require judgement and may introduce behavioural biases (reluctance to demote a former "winner").
 
-**Verdict:** INTERNALLY CONTRADICTORY. The strategy cannot simultaneously rebalance annually based on factor signals and hold positions for 10-15 years to allow compounding. These are incompatible portfolio management approaches.
+**Verdict:** RESOLVED. The internal contradiction has been fixed by the two-sleeve model. The Factor Sleeve rebalances semi-annually with no pretense of patient holding. The Compounding Sleeve holds indefinitely for genuine patient compounding. The two mechanisms no longer contradict each other, though both individually still carry the risks noted above.
 
 ---
 
@@ -198,9 +201,9 @@ Things we know we do not know, and that materially affect the strategy's viabili
 
 ### KU-1: The False Positive Rate of the Factor Screen
 
-We do not know how many stocks passing all factor criteria (small cap, high FCF yield, high gross profitability, moderate value, positive momentum, EBITDA-supported asset growth) *fail* to deliver multibagger returns. Yartseva studied the winners; nobody has studied the losers with identical starting characteristics. Without this denominator, we cannot calculate the precision (positive predictive value) of the screen.
+We do not know how many stocks passing all factor criteria (small cap, high FCF yield, high gross profitability, moderate value, positive momentum) *fail* to deliver strong returns. Yartseva studied the winners; nobody has studied the losers with identical starting characteristics. Without this denominator, we cannot calculate the precision (positive predictive value) of the screen.
 
-**Why it matters:** If the screen selects 200 stocks annually but only 5 become multibaggers, the false positive rate is 97.5%. The portfolio would be dominated by non-multibaggers, and net returns would depend entirely on how those 195 "false positives" perform -- a question the strategy does not address.
+**Why it matters:** If the screen selects 200 stocks annually but only 5 deliver strong returns, the false positive rate is 97.5%. The portfolio would be dominated by underperformers, and net returns would depend entirely on how those 195 "false positives" perform -- a question the strategy does not address.
 
 ---
 
@@ -222,7 +225,7 @@ We do not know where UK factor premiums stand today relative to their historical
 
 ### KU-4: How the Strategy Performs in a Sustained Bear Market
 
-We have no evidence on how a UK multi-factor multibagger strategy performs during a prolonged downturn. The Yartseva sample begins at the GFC trough (2009) and does not include any secular bear market period. UK bear markets (1973-1975, 2000-2003) may see value traps, momentum crashes, and small-cap underperformance simultaneously.
+We have no evidence on how a UK multi-factor small-cap strategy performs during a prolonged downturn. The Yartseva sample begins at the GFC trough (2009) and does not include any secular bear market period. UK bear markets (1973-1975, 2000-2003) may see value traps, momentum crashes, and small-cap underperformance simultaneously.
 
 **Why it matters:** If the strategy is deployed and a bear market occurs within the first 3-5 years, the investor faces significant drawdowns with no historical basis for expecting recovery.
 
@@ -244,19 +247,19 @@ Published bid-ask spread data for AIM stocks is limited and often stale. We do n
 
 ---
 
-### KU-7: Whether "Multibagger" Targeting Adds Value Over Standard Factor Investing
+### KU-7: Whether the Factor Tilt Adds Value Over a Passive UK Small-Cap Quality ETF
 
-We do not know whether a multi-factor strategy explicitly targeting extreme positive returns (multibaggers) outperforms a standard multi-factor strategy that simply buys stocks ranking highly on the same factors without any multibagger narrative. The "multibagger" framing may just be marketing layered on top of a conventional quality-value-momentum small-cap tilt.
+The strategy has been reframed: it no longer targets extreme winners ("multibaggers") explicitly. It is now a factor-tilt strategy with incidental exposure to the population from which extreme winners emerge. The relevant question is therefore no longer "does targeting multibaggers add value?" but rather "does this specific factor tilt add value over a passive UK small-cap quality ETF after costs?"
 
-**Why it matters:** If the strategy does not outperform a simple UK quality small-cap ETF after costs, the additional complexity and illiquidity are uncompensated.
+**Why it matters:** If the strategy does not outperform a simple UK quality small-cap ETF (such as an iShares MSCI UK Small Cap Quality Factor ETF or equivalent) after accounting for transaction costs, management effort, illiquidity, and tax drag from rebalancing, then the additional complexity is uncompensated. The reframing makes this comparison more honest but does not change the fundamental question.
 
 ---
 
 ### KU-8: The Optimal Factor Weighting for UK Markets
 
-We do not know what weights to assign each factor (FCF yield, gross profitability, value, momentum, size, investment-EBITDA) for UK small caps. Yartseva's coefficients are US-specific. Equal weighting is a default but may not be optimal. Data-driven optimisation risks overfitting.
+The revised strategy uses the following factor weights: Gross Profitability 30%, FCF Yield 20%, EV/EBITDA (value) 20%, Momentum 20%, Size 10%. The Investment-EBITDA interaction has been removed entirely. These weights are informed by the relative strength of UK evidence for each factor (profitability strongest, size weakest) but remain estimates without direct UK optimisation.
 
-**Why it matters:** Factor weighting is a first-order determinant of strategy returns. Getting it wrong can reverse the sign of the strategy's alpha.
+**Why it matters:** Factor weighting is a first-order determinant of strategy returns. Getting it wrong can reverse the sign of the strategy's alpha. The current weights are more defensible than equal weighting (they reflect the evidence hierarchy) but have not been validated against UK small-cap data.
 
 ---
 
@@ -319,11 +322,11 @@ Where the academic and practitioner literature is silent, insufficient, or confl
 
 ---
 
-### EG-1: No Survivorship-Free UK Multibagger Study Exists
+### EG-1: No Survivorship-Free UK Extreme Winner Study Exists
 
-The Yartseva study is US-only and examines winners retrospectively. The Stockopedia UK evidence is anecdotal (top 10 winners over 10 years), not a systematic study. No academic paper has systematically identified UK multibaggers, controlled for survivorship, and estimated the conditional probability of achieving 5-10x returns given specific factor characteristics.
+The Yartseva study is US-only and examines winners retrospectively. The Stockopedia UK evidence is anecdotal (top 10 winners over 10 years), not a systematic study. No academic paper has systematically identified UK extreme winners, controlled for survivorship, and estimated the conditional probability of achieving 5-10x returns given specific factor characteristics.
 
-**What is needed:** A study using LSPD (London Share Price Database) or equivalent survivorship-free UK dataset that identifies ALL stocks matching the factor criteria at each point in time, tracks their forward returns including delistings, and estimates the precision (positive predictive value) and recall of the factor screen for multibagger outcomes.
+**What is needed:** A study using LSPD (London Share Price Database) or equivalent survivorship-free UK dataset that identifies ALL stocks matching the factor criteria at each point in time, tracks their forward returns including delistings, and estimates the precision (positive predictive value) and recall of the factor screen for extreme return outcomes.
 
 ---
 
@@ -337,9 +340,11 @@ Published UK factor premiums are invariably gross of transaction costs. No study
 
 ### EG-3: The Investment-EBITDA Interaction Has Not Been Tested in UK/European Data
 
-This is a novel finding from Yartseva (2025) tested exclusively in US data. No independent replication exists in any market. The European asset growth literature (Papanastasopoulos 2017; European Journal of Finance 2022) does not test this specific interaction.
+*Note: This evidence gap is now moot for the revised strategy, as the Investment-EBITDA interaction has been removed entirely from the factor model. Retained here for completeness and as a record of why the factor was dropped.*
 
-**What is needed:** Independent testing of the Investment-EBITDA interaction in UK/European small caps using a survivorship-free dataset, before incorporating it as a strategy component.
+This was a novel finding from Yartseva (2025) tested exclusively in US data. No independent replication existed in any market. The European asset growth literature (Papanastasopoulos 2017; European Journal of Finance 2022) did not test this specific interaction, and Papanastasopoulos's findings on the asset growth anomaly in European loss-making firms contradicted the interaction's predicted direction.
+
+**Resolution:** Factor removed from strategy. The investment discipline signal is now captured only through a standalone CMA/asset growth screening overlay, which has broader academic support.
 
 ---
 
@@ -369,7 +374,7 @@ The UK factor literature tests factors over full sample periods or sub-periods d
 
 ### EG-7: Momentum Half-Life in UK Small Caps Is Unknown
 
-The momentum literature establishes that 12-1 month momentum is profitable in UK equities (Liu et al. 1999, Hon & Tonks 2003), but the half-life of the momentum signal -- how quickly it decays after formation -- has not been established for UK small caps specifically. Given the strategy's annual rebalancing frequency, the momentum signal may be largely decayed by the time it is acted upon.
+The momentum literature establishes that 12-1 month momentum is profitable in UK equities (Liu et al. 1999, Hon & Tonks 2003), but the half-life of the momentum signal -- how quickly it decays after formation -- has not been established for UK small caps specifically. Given the strategy's semi-annual rebalancing frequency (with quarterly momentum monitoring as an overlay), the momentum signal may still partially decay between action points.
 
 **What is needed:** Signal decay analysis for momentum in UK small caps, comparing formation periods and holding periods to determine optimal implementation frequency.
 
@@ -383,11 +388,11 @@ AIM stocks benefit from inheritance tax relief (Business Property Relief after 2
 
 ---
 
-### EG-9: The Literature Is Silent on Optimal Position Sizing for Multibagger Strategies
+### EG-9: The Literature Is Silent on Optimal Position Sizing for Skewed-Return Factor Strategies
 
-The strategy literature discusses factor selection and portfolio construction (equal-weight vs value-weight), but no paper addresses optimal position sizing when the objective is to capture extreme positive skewness. Standard mean-variance optimisation is inappropriate when the return distribution is heavily right-skewed. Kelly criterion-based approaches have been proposed for concentrated bets but not for multi-factor small-cap strategies.
+The strategy literature discusses factor selection and portfolio construction (equal-weight vs value-weight), but no paper addresses optimal position sizing when the objective is to capture extreme positive skewness through a factor tilt. Standard mean-variance optimisation is inappropriate when the return distribution is heavily right-skewed. Kelly criterion-based approaches have been proposed for concentrated bets but not for multi-factor small-cap strategies.
 
-**What is needed:** Position sizing framework that accounts for the extreme skewness of individual stock returns, the base rate of multibagger outcomes, and the liquidity constraints of UK small caps.
+**What is needed:** Position sizing framework that accounts for the extreme skewness of individual stock returns, the base rate of extreme return outcomes, and the liquidity constraints of UK small caps.
 
 ---
 
@@ -401,19 +406,30 @@ It is unknown whether combining multiple factors outperforms the best single fac
 
 ## Summary: The Burden of Proof
 
-The strategy as proposed relies on a chain of assumptions, each of which must hold for the strategy to succeed:
+The revised strategy relies on a shorter and more honest chain of assumptions than the original. The removal of the Investment-EBITDA interaction and the resolution of the rebalancing/holding contradiction through the two-sleeve architecture have addressed two of the weakest links. The remaining chain:
 
-1. US factor premia exist in the UK (partially supported)
-2. Historical factor premia will persist (weakly supported)
-3. Small caps are the right universe (tautologically true, practically unproven)
-4. FCF yield predicts extreme returns (single-study US evidence with unstable coefficients)
-5. Investment-EBITDA interaction is genuine (no replication, likely overfit)
-6. Annual rebalancing is sufficient (contradicts momentum inclusion and multibagger holding period)
-7. Data quality is adequate (deteriorates for smallest stocks)
-8. Diversification is sufficient (in tension with multibagger concentration)
-9. 2009-2024 is representative (it is not)
-10. Patient holding allows compounding (contradicts rebalancing approach)
+1. US factor premia exist in the UK (partially supported -- ~70%)
+2. Historical factor premia will persist (weakly supported -- ~50%)
+3. Small caps are the right universe (tautologically true for extreme winners, practically unproven -- ~70%)
+4. FCF yield predicts strong returns (single-study US evidence with unstable coefficients -- ~50%)
+5. ~~Investment-EBITDA interaction is genuine~~ **REMOVED** -- no longer part of the assumption chain
+6. ~~Annual rebalancing is sufficient / contradicts holding period~~ **RESOLVED** -- two-sleeve architecture addresses both rebalancing and holding
+7. Data quality is adequate (deteriorates for smallest stocks -- ~50%)
+8. 25-35 positions provide sufficient diversification (partially resolved by two-sleeve architecture -- ~55%)
+9. 2009-2024 is representative (it is not -- ~30%)
+10. ~~Patient holding contradicts rebalancing~~ **RESOLVED** -- Factor Sleeve rebalances, Compounding Sleeve holds
 
-If we assign generous probabilities to each assumption holding (say, 70% for the strongest, 30% for the weakest), the joint probability of all ten holding simultaneously is approximately 0.7 x 0.5 x 0.7 x 0.5 x 0.3 x 0.4 x 0.5 x 0.4 x 0.3 x 0.3 = approximately **0.09%**. Even being very generous with individual probabilities, the compound probability that the strategy works as described is extremely low.
+**Revised compound probability:** With Investment-EBITDA removed and two internal contradictions resolved, the assumption chain shortens to seven independent assumptions. Assigning the probabilities above: 0.70 x 0.50 x 0.70 x 0.50 x 0.50 x 0.55 x 0.30 = approximately **1.0%**.
 
-This does not mean factor investing in UK small caps is worthless. It means that the specific strategy as articulated -- targeting multibaggers using a US-derived multi-factor model in an illiquid, shrinking UK small-cap universe with annual rebalancing -- faces a preponderance of unresolved challenges. The proponents bear the burden of demonstrating, with UK data and realistic assumptions, that the strategy generates positive net-of-cost alpha. Until that evidence is produced, the strategy should be considered speculative.
+This is a material improvement over the original estimate of approximately 0.09%, driven by removing the weakest assumption (Investment-EBITDA at ~30%) and resolving two contradictions (rebalancing at ~40% and holding period at ~30%). The revised strategy eliminates three of the lowest-probability links.
+
+However, a 1% joint probability still means the strategy faces long odds of working exactly as described. The fundamental challenges remain:
+
+- **Factor decay is real and ongoing.** The post-publication attenuation documented by McLean & Pontiff (2016) applies to every factor in the strategy.
+- **UK small-cap structural headwinds persist.** De-equitisation, illiquidity, and declining AIM quality are not addressed by better portfolio construction.
+- **No UK-specific validation exists.** The strategy is still built primarily on US evidence extrapolated to the UK.
+- **The 2009-2024 calibration period remains unrepresentative.** No portfolio design change fixes this.
+
+The revised strategy is more honest and internally consistent than the original. It no longer claims to target extreme winners through a factor model while simultaneously rebalancing away from winners. It no longer relies on an unreplicated interaction term. It acknowledges the factor-tilt nature of the approach rather than wrapping it in aspirational language about extreme compounding.
+
+But intellectual honesty does not equal investment merit. The proponents still bear the burden of demonstrating, with UK data and realistic assumptions, that this specific factor tilt generates positive net-of-cost alpha over a passive UK small-cap quality ETF. Until that evidence is produced, the strategy should be considered speculative -- albeit more carefully constructed speculation than the original version.

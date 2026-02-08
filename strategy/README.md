@@ -1,73 +1,91 @@
-# UK Multi-Bagger Factor Investing Strategy
+# UK Small-Cap Quality-Value-Momentum Factor Strategy
 
-**An Evidence-Based Approach to Identifying Exceptional UK Equities**
+**An Evidence-Based Factor-Tilt Approach to UK Small-Cap Equities**
 
 ---
 
 ## Executive Summary
 
-This research project designs an institutional-grade factor investing strategy aimed at identifying multi-bagger stocks (5x+ returns) in UK equities, grounded entirely in academic evidence from four mandatory source papers and extensive supporting literature.
+This research project designs a systematic factor investing strategy for UK small-cap equities, grounded in replicated academic evidence from multiple independent sources. The strategy tilts toward the factor characteristics that wealth-creating stocks disproportionately exhibit — high profitability, reasonable valuation, positive momentum, and disciplined capital allocation — while maintaining sufficient diversification to capture the rare extreme winners that drive aggregate market returns.
 
 ### The Core Problem
 
-Most stocks destroy value. Bessembinder (2018, 2023) demonstrates that 57.4% of all US stocks underperform Treasury bills over their lifetimes, and only 2-4% of listed companies account for virtually all net stock market wealth creation. Internationally, the picture is worse — only 42.4% of stocks outperform bills across 57 countries. This means the base rate for successful stock picking is terrible, and the base rate for identifying a multi-bagger (5-10x return) is vanishingly small.
+Most stocks destroy value. Bessembinder (2018, 2023) demonstrates that 57.4% of all US stocks underperform Treasury bills over their lifetimes, and only 2-4% of listed companies account for virtually all net stock market wealth creation. Internationally, the picture is worse — only 42.4% of stocks outperform bills across 57 countries (Fang et al. 2021). This means the base rate for successful stock picking is terrible, and any systematic approach must focus on avoiding the wealth-destroying majority while maintaining broad exposure to the wealth-creating minority.
 
 ### What the Evidence Says
 
-After deep analysis of Yartseva (2025), Harvey, Liu & Zhu (2016), Bermejo et al. (2021), and extensive UK/European factor studies, the following evidence-led conclusions emerge:
+After deep analysis of Harvey, Liu & Zhu (2016), Bermejo et al. (2021), Novy-Marx (2013), and extensive UK/European factor studies, the following evidence-led conclusions emerge:
 
-**Factors that predict multi-bagger outcomes (strong evidence):**
-1. **Free Cash Flow Yield** — The single strongest predictor (Yartseva 2025, coefficient 46-82). Combines profitability and valuation in one metric.
-2. **Gross Profitability (GP/Assets)** — Most robust quality metric internationally (Novy-Marx 2013, Bermejo 2021 FF3 alpha 4.23%, t=10.88). Remains robust in UK when other anomalies decay.
-3. **Small Capitalisation** — Multi-baggers overwhelmingly start small (median $348m US; GBP 50-350m UK).
-4. **Moderate Valuation** — High book-to-market stocks in the multibagger universe returned +34.7% excess vs +12.8% for low-value (Yartseva). EV/EBITDA is the strongest European value metric (Bermejo).
-5. **Investment-EBITDA Growth Interaction** — Aggressive asset expansion is positive ONLY when supported by corresponding EBITDA growth; otherwise returns drop 5-23% (Yartseva).
-6. **Momentum** — Strongest pure factor in Europe (Sharpe 0.80, Bermejo). Confirmed in UK (Liu et al. 1999). Multi-factor combinations achieve Sharpe 0.94.
+**Factors with strong, replicated evidence (multiple independent studies, t > 3.0):**
+1. **Gross Profitability (GP/Assets)** — Most robust quality metric internationally (Novy-Marx 2013, tested in 19 countries; Bermejo 2021 FF3 alpha 4.23%, t=10.88; Foye 2018 confirms UK respecification; Cotter & McGeever 2018 finds it remains robust when other UK anomalies decay).
+2. **Free Cash Flow Yield** — Combines profitability and valuation in a single, manipulation-resistant metric (supported by Fama & French 2018 finding cash-based profitability dominates accrual measures; Yartseva 2025 identifies it as a strong predictor, though UK-specific calibration is unvalidated).
+3. **Value (EV/EBITDA)** — Survives Harvey et al.'s 0.1% significance threshold. Strongest European value metric (Bermejo 2021). Long-run UK value premium of 3-5% p.a. (Dimson, Marsh & Staunton).
+4. **Momentum (12-1 Month)** — Strongest pure factor in European data (Sharpe 0.80, Bermejo 2021). Confirmed in UK equities (Liu et al. 1999, Asness et al. 2013). Survives Harvey et al.'s 0.1% threshold.
+5. **Small Capitalisation** — Used as a universe definition, not a return factor. The raw UK size premium reversed post-publication (Dimson & Marsh 1999), but small caps remain the universe where mispricing is largest and extreme outcomes most likely.
 
-**Factors that do NOT predict multi-baggers (commonly believed but statistically insignificant):**
-- Earnings growth, dividend policy, debt levels, share buybacks, analyst coverage, R&D intensity, Altman Z-scores (all: Yartseva 2025)
+**Factors correctly rejected (commonly believed but statistically insignificant):**
+- Earnings growth, dividend policy, debt levels, share buybacks, analyst coverage, R&D intensity, ROE, Altman Z-scores, Investment-EBITDA interaction (all: see rejected_or_weak_factors.md)
 
 **Statistical rigour (Harvey, Liu & Zhu 2016):**
 - Only 9 of 313 published factors survive t > 3.0 after multiple testing adjustment
 - 53% of published factors are likely false discoveries
-- All factors in this strategy meet or exceed the t > 3.0 threshold through multiple independent replications
+- Every factor in this strategy has multiple independent replications across geographies
 
 ### The Strategy
 
-The strategy targets UK-listed equities (Main Market + AIM) with market caps of GBP 30m-1,000m, using an iterative screening approach inspired by Bermejo et al. (2021):
+The strategy uses a two-sleeve portfolio architecture to resolve the tension between systematic factor harvesting and patient compounding:
 
-1. **Universe**: ~250-400 eligible UK stocks after liquidity and sector filters
-2. **Step 1 — Profitability Gate**: Require above-median Gross Profitability (GP/Assets)
-3. **Step 2 — Valuation Filter**: Require above-median Free Cash Flow Yield AND reasonable EV/EBITDA
-4. **Step 3 — Investment Discipline**: Require asset growth ≤ EBITDA growth (Yartseva's key interaction)
-5. **Step 4 — Momentum Confirmation**: Require positive 12-month price momentum (skip last month)
-6. **Result**: A concentrated portfolio of 20-40 stocks, rebalanced annually
+1. **Factor Sleeve (60-70% of portfolio):** 15-20 positions, rebalanced semi-annually. Harvests quality-value-momentum factor premiums via systematic screening of UK-listed equities (Main Market + AIM) with market caps of GBP 50m-1,000m.
+2. **Compounding Sleeve (30-40% of portfolio):** 5-10 positions graduated from the Factor Sleeve when they demonstrate sustained fundamental strength. Held indefinitely, sold only on hard fundamental triggers.
 
-**Target return profile**: Not a specific return promise — that would be speculative. Instead: systematic exposure to the factor characteristics that the wealth-creating minority of stocks disproportionately exhibits, with sufficient diversification to have a meaningful probability of owning the rare winners.
+**Factor weights (scoring model):**
+
+| Factor | Weight | Evidence Base |
+|--------|--------|---------------|
+| Gross Profitability (GP/Assets) | 30% | Novy-Marx 2013, Bermejo 2021, Foye 2018, Cotter & McGeever 2018 |
+| FCF Yield | 20% | Fama & French 2018, Yartseva 2025 (reduced weight due to unvalidated UK calibration) |
+| EV/EBITDA (Value) | 20% | Harvey et al. 2016, Bermejo 2021, DMS long-run UK data |
+| Momentum (12-1 month) | 20% | Bermejo 2021, Asness et al. 2013, Liu et al. 1999 |
+| Size (universe filter) | 10% | Descriptive only; not a standalone return factor in UK |
+
+### Realistic Performance Expectations
+
+| Scenario | Probability | Expected Net Alpha (vs FTSE Small Cap) |
+|----------|------------|----------------------------------------|
+| **Bull case** | 20-30% | +2% to +4% annually |
+| **Base case** | 40-50% | 0% to +1% annually |
+| **Bear case** | 30-40% | -1% to -3% annually |
+
+**Expected value: approximately +0.3% net alpha.** This is an honest assessment: the strategy's expected value is marginally positive but within the margin of estimation error. The case for it rests on the persistence of the profitability premium, avoiding catastrophic stocks via quality gates, and the optionality of the Compounding Sleeve.
+
+Factor premiums decline approximately 58% post-publication (McLean & Pontiff 2016). Any historical premium estimate must be discounted accordingly.
 
 ### Critical Risks and Honest Limitations
 
-This strategy has significant risks that are documented in detail:
-
-1. **Survivorship bias** — Yartseva studied only successful 10x stocks; the false-positive rate is unknown
-2. **Base rate problem** — Even with perfect screens, only 2-4% of stocks create meaningful wealth
-3. **US-to-UK translation** — All Yartseva findings are US-only; UK market structure differs materially
-4. **Factor decay** — Alphas approaching zero post-2012 (Bermejo); 58% lower post-publication (McLean & Pontiff)
-5. **Liquidity constraints** — AIM spreads of 5-10x FTSE 100; stamp duty 0.5% on Main Market
+1. **Post-publication factor decay** — Factor alphas approaching zero post-2012 in Europe (Bermejo 2021); 58% lower post-publication (McLean & Pontiff 2016)
+2. **No UK-specific backtesting exists** — Zero historical simulations using UK data, survivorship-free databases, or realistic AIM transaction costs
+3. **Survivorship bias** — Source studies examined successful stocks retrospectively; the false-positive rate is unknown
+4. **Base rate problem** — Even with factor screens, only 2-4% of stocks create meaningful wealth (Bessembinder 2018)
+5. **Liquidity constraints** — AIM spreads of 5-10x FTSE 100; stamp duty 0.5% on Main Market; estimated 1.5-3% annual cost drag
 6. **UK de-equitisation** — 20% fewer listed companies in 5 years; persistent fund outflows
 
-### The Final Check
+### Pre-Deployment Requirements
 
-*"If this strategy fails, can I clearly explain why using the papers?"*
+The strategy should NOT receive real capital until:
+1. Historical screen confirms a viable filtered universe of 40+ stocks
+2. Dead-stock audit shows false-positive rate below 50%
+3. Paper portfolio demonstrates executable trades within the 3% spread cap
+4. The investor has committed (in writing) to the kill switch criteria
+5. Minimum capital of GBP 100,000 is available
 
-**Yes.** The strategy would fail if:
-- Survivorship bias in Yartseva overstates the predictive power of the identified factors (base-rate probability remains too low even with correct factor tilts)
-- Factor premiums continue their post-2012 decay toward zero (Bermejo's documented trend)
-- UK-specific implementation costs (stamp duty, AIM spreads, illiquidity) consume the gross factor premiums
-- The 2009-2024 bull market period that generated Yartseva's sample is not representative of future market regimes
-- Concentrated UK small-cap exposure coincides with continued de-equitisation and fund outflows
+### The Kill Switch
 
-Each of these failure modes is documented, probability-assessed, and has specific monitoring triggers in the risk documentation.
+Binding commitment to halt and review if ANY of these occur:
+1. Underperforms FTSE Small Cap Index by >3% annually for 3 consecutive years (net of all costs)
+2. Gross profitability premium turns negative over any rolling 5-year window in UK data
+3. All-in transaction costs exceed gross factor returns for 2 consecutive years
+4. Investable universe (post-filter) drops below 40 stocks
+5. AIM loses Business Property Relief, triggering structural decline
 
 ---
 
@@ -91,7 +109,7 @@ Throughout all documents, evidence is classified as:
 
 | Label | Meaning |
 |-------|---------|
-| **[CORE EVIDENCE]** | From the four mandatory source papers |
+| **[CORE EVIDENCE]** | From papers with multiple independent replications and t > 3.0 |
 | **[DIRECT EVIDENCE]** | From specific academic papers with citations |
 | **[SUPPORTING EVIDENCE]** | From closely related research |
 | **[RELATED EVIDENCE]** | From adjacent academic work |
@@ -102,15 +120,19 @@ Throughout all documents, evidence is classified as:
 
 ---
 
-## Mandatory Source Papers Analysed
+## Key Source Papers
 
-1. **Yartseva (2025)** — "The Alchemy of Multibagger Stocks: An Empirical Investigation of Factors That Drive Outperformance." CAFE Working Paper No. 33, Birmingham City University. *464 multibagger stocks, 150+ variables, GMM estimation.*
+1. **Harvey, Liu & Zhu (2016)** — "...and the Cross-Section of Expected Returns." Review of Financial Studies, 29(1): 5-68. *316 factors, multiple testing framework, t > 3.0 threshold.*
 
-2. **Harvey, Liu & Zhu (2016)** — "...and the Cross-Section of Expected Returns." Review of Financial Studies, 29(1): 5-68. *316 factors, multiple testing framework, t > 3.0 threshold.*
+2. **Bermejo et al. (2021)** — "Factor investing: A stock selection methodology for the European equity market." Heliyon, 7(10): e08168. *600 European large-caps, iterative multi-factor strategies, Sharpe 0.94.*
 
-3. **Bermejo et al. (2021)** — "Factor investing: A stock selection methodology for the European equity market." Heliyon, 7(10): e08168. *600 European large-caps, iterative multi-factor strategies, Sharpe 0.94.*
+3. **Novy-Marx (2013)** — "The Other Side of Value: The Gross Profitability Premium." Journal of Financial Economics, 108(1): 1-28. *Gross profitability tested in 19 developed international markets.*
 
-4. **UK/European Empirical Factor Studies** — Including Dimson, Marsh & Staunton (DMS database), Gregory, Tharyan & Christidis (2013), Novy-Marx (2013), Asness, Moskowitz & Pedersen (2013), Daniel & Moskowitz (2016), Bessembinder (2018, 2023), and 20+ additional papers.
+4. **McLean & Pontiff (2016)** — "Does Academic Research Destroy Stock Return Predictability?" Journal of Finance, 71(1): 5-32. *Factor returns decline 26% out-of-sample, 58% post-publication.*
+
+5. **UK/European Empirical Factor Studies** — Including Dimson, Marsh & Staunton (DMS database), Gregory, Tharyan & Christidis (2013), Asness, Moskowitz & Pedersen (2013), Daniel & Moskowitz (2016), Bessembinder (2018, 2023), Cotter & McGeever (2018), Foye (2018), and 20+ additional papers.
+
+6. **Yartseva (2025)** — "The Alchemy of Multibagger Stocks." CAFE Working Paper No. 33, Birmingham City University. *464 multibagger stocks, 150+ variables. Used as supporting evidence only; not peer-reviewed, US-only, unreplicated.*
 
 ---
 
@@ -118,13 +140,13 @@ Throughout all documents, evidence is classified as:
 
 | # | Insight | Source | Confidence |
 |---|---------|--------|------------|
-| 1 | FCF Yield is the strongest single predictor of multi-bagger returns | Yartseva 2025 | High |
-| 2 | Gross Profitability (GP/Assets) is the most robust quality metric internationally | Novy-Marx 2013, Bermejo 2021 | High |
-| 3 | Only 9 of 313 factors survive rigorous multiple-testing adjustment (t > 3.0) | Harvey et al. 2016 | High |
-| 4 | Iterative multi-factor combinations (value→quality→momentum) achieve Sharpe 0.94 | Bermejo et al. 2021 | High |
+| 1 | Gross Profitability (GP/Assets) is the most robust quality metric internationally | Novy-Marx 2013, Bermejo 2021, Foye 2018 | High |
+| 2 | Only 9 of 313 factors survive rigorous multiple-testing adjustment (t > 3.0) | Harvey et al. 2016 | High |
+| 3 | Factor returns decline 58% post-publication | McLean & Pontiff 2016 | High |
+| 4 | Iterative multi-factor combinations (value->quality->momentum) achieve Sharpe 0.94 | Bermejo et al. 2021 | High (in-sample) |
 | 5 | 57.4% of stocks underperform Treasury bills over their lifetimes | Bessembinder 2018 | High |
-| 6 | Earnings growth does NOT predict multi-bagger outcomes | Yartseva 2025 | High (counterintuitive) |
-| 7 | Asset growth is positive ONLY when supported by EBITDA growth | Yartseva 2025 | High |
-| 8 | UK size premium reversed post-publication (+6% → -6%) | Dimson & Marsh 1999 | High |
-| 9 | Factor alphas are decaying toward zero post-2012 | Bermejo 2021 | Moderate |
-| 10 | UK AIM market has structural liquidity constraints (5-10x wider spreads) | Multiple sources | High |
+| 6 | UK size premium reversed post-publication (+6% to -6%) | Dimson & Marsh 1999 | High |
+| 7 | Earnings growth does NOT predict extreme returns | Yartseva 2025 | High (counterintuitive) |
+| 8 | UK AIM market has structural liquidity constraints (5-10x wider spreads) | Multiple sources | High |
+| 9 | Base-case net alpha is approximately 0-1%, not 3-6% | Composite assessment | Moderate |
+| 10 | No UK-specific backtesting of this strategy exists | N/A | Certain |

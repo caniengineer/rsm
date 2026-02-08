@@ -1,4 +1,4 @@
-# Literature Review: Academic Evidence for UK Multi-Bagger Factor Investing
+# Literature Review: Academic Evidence for UK Small-Cap Factor Strategy
 
 **Compiled:** 2026-02-07
 **Purpose:** Structured synthesis of mandatory source papers and supporting evidence
@@ -65,6 +65,10 @@ Earnings growth (all forms), dividends, debt levels, share buybacks, analyst cov
 - **Coefficient instability**: FCF yield ranges 46-82 across specifications
 - **Short OOS window**: Only 2 years of out-of-sample validation
 - **FF5 intercept of 83**: Large unexplained component remains
+
+### Limitations and Status
+
+**This paper is used as SUPPORTING evidence only, not as a primary evidence source.** It is a single, non-peer-reviewed working paper that has not been independently replicated. The strategy no longer depends on any Yartseva-exclusive findings. Factors with weight in the scoring model (GP/Assets, FCF Yield, EV/EBITDA, Momentum) all have multiple independent replications from other sources.
 
 ### Relevance to Multi-baggers
 This is the ONLY paper that directly studies multi-bagger characteristics empirically. All other evidence is indirect (factor premiums for average returns, not extreme outcomes). The distinction matters: factors that predict mean outperformance may not predict right-tail outcomes.
@@ -210,19 +214,47 @@ Can systematic multi-factor portfolios outperform benchmarks in European equitie
 
 ---
 
+## Paper 5: McLean & Pontiff (2016) — "Does Academic Research Destroy Stock Return Predictability?"
+
+**Title:** Does Academic Research Destroy Stock Return Predictability?
+**Source:** Journal of Finance, 71(1): 5-32
+**Key Insight:** Academic publication of anomalies leads to substantial decay in factor premiums, with returns declining 26% out-of-sample and 58% post-publication. This provides critical context for all factor premium estimates used in this strategy.
+
+### Research Question
+Do stock return anomalies documented in academic research decline after publication, and if so, by how much?
+
+### Dataset
+- 97 characteristics shown to predict cross-sectional stock returns in peer-reviewed journals
+- Sample period extended beyond original publication dates to measure post-publication decay
+
+### Key Findings
+- **Out-of-sample decay: 26%** — Returns to anomaly-based strategies decline by an average of 26% when tested on data not used in the original study (but prior to publication).
+- **Post-publication decay: 58%** — Returns decline by an average of 58% after the academic paper documenting the anomaly is published.
+- The post-publication decline is consistent with two mechanisms: (1) investors learning about mispricing and trading it away, and (2) original studies benefiting from data-mining/overfitting.
+- Anomalies based on less liquid stocks (where arbitrage is harder) show smaller post-publication declines, suggesting mispricing correction is a meaningful channel.
+- The findings imply that **academic factor premiums should be haircut by at least 50%** when used for forward-looking return estimates.
+
+### Implications for This Strategy
+- All factor premium estimates from the academic literature (value, profitability, momentum, investment) should be treated as upper bounds on achievable future returns.
+- Factor premiums documented from historical backtests are likely to overstate what can be captured going forward, even before transaction costs.
+- Factors with strong economic rationale (risk-based explanations) may be more persistent than those driven purely by mispricing, but even risk-based factors show some post-publication decay.
+- This reinforces the importance of using factors with the highest evidence quality (Tier 1 per Harvey, Liu & Zhu) and multiple independent replications, as these are most likely to retain meaningful premiums post-publication.
+
+---
+
 ## Cross-Paper Synthesis: Evidence Mapping
 
-### Factors → Multi-Bagger Probability
+### Factors → Factor Evidence for Above-Average Returns
 
-| Factor | Increases multi-bagger probability? | Evidence |
+| Factor | Increases probability of above-average returns? | Evidence |
 |--------|-------------------------------------|----------|
-| FCF Yield (high) | **YES — strongest signal** | Yartseva 2025 [CORE] |
+| FCF Yield (high) | **YES — strongest signal** | Yartseva 2025 [SUPPORTING], Fama & French 2018 [CORE] |
 | Gross Profitability (high) | **YES — quality gate** | Bermejo 2021, Novy-Marx 2013 [CORE] |
-| Value (low P/E, high B/M, low EV/EBITDA) | **YES — non-linear effect** | Yartseva 2025, Bermejo 2021 [CORE] |
-| Small Cap Size | **YES — necessary condition** | Yartseva 2025, Stockopedia UK [CORE] |
-| Investment + EBITDA growth | **YES — conditional** | Yartseva 2025 [CORE] |
+| Value (low P/E, high B/M, low EV/EBITDA) | **YES — non-linear effect** | Yartseva 2025 [SUPPORTING], Bermejo 2021 [CORE] |
+| Small Cap Size | **YES — necessary condition** | Yartseva 2025 [SUPPORTING], Stockopedia UK [SUPPORTING] |
+| Investment + EBITDA growth | **REMOVED FROM STRATEGY** — single-study finding (Yartseva 2025 only), no independent replication | Yartseva 2025 [WEAK/SPECULATIVE] |
 | Momentum (standard 12-1) | **For average returns, YES** | Bermejo 2021 [CORE] |
-| Contrarian momentum (near lows) | **For multibaggers, YES** | Yartseva 2025 [CORE] |
+| Contrarian momentum (near lows) | **REMOVED — single-study evidence only** | Yartseva 2025 [WEAK/SPECULATIVE] |
 
 | Factor | Avoids losers but doesn't create winners? | Evidence |
 |--------|------------------------------------------|----------|
@@ -236,11 +268,11 @@ Can systematic multi-factor portfolios outperform benchmarks in European equitie
 
 | Factor | Does NOT predict multi-baggers? | Evidence |
 |--------|-------------------------------|----------|
-| Earnings growth | **Insignificant** | Yartseva 2025 [CORE] |
-| Dividend policy | **Irrelevant** | Yartseva 2025 [CORE] |
-| Debt levels | **Not predictive** | Yartseva 2025 [CORE] |
-| R&D intensity | **No correlation** | Yartseva 2025 [CORE] |
-| Analyst coverage | **Not significant** | Yartseva 2025 [CORE] |
+| Earnings growth | **Insignificant** | Yartseva 2025 [SUPPORTING] |
+| Dividend policy | **Irrelevant** | Yartseva 2025 [SUPPORTING] |
+| Debt levels | **Not predictive** | Yartseva 2025 [SUPPORTING] |
+| R&D intensity | **No correlation** | Yartseva 2025 [SUPPORTING] |
+| Analyst coverage | **Not significant** | Yartseva 2025 [SUPPORTING] |
 
 ---
 
@@ -252,15 +284,17 @@ Can systematic multi-factor portfolios outperform benchmarks in European equitie
 3. Most published factors are likely false discoveries — rigorous selection is essential
 4. Multi-factor combinations outperform single factors (Bermejo Sharpe of 0.94 vs 0.80)
 5. Factor premiums decay after publication and after accounting for costs
+6. Factor premiums decline substantially post-publication (McLean & Pontiff: 58% decay)
 
 ### What Is a Reasonable Assumption
-1. Yartseva's US findings are directionally applicable to UK equities (supported by Stockopedia UK overlap)
-2. The iterative approach (value → quality → momentum) will work in UK small/mid-caps
-3. AIM stocks with sufficient liquidity are the natural hunting ground for UK multi-baggers
-4. Patient holding (3-7+ years) is required for multi-bagger outcomes
+1. The iterative approach (value → quality → momentum) will work in UK small/mid-caps
+2. AIM stocks with sufficient liquidity are the natural hunting ground for UK multi-baggers
+3. Patient holding (3-7+ years) is required for multi-bagger outcomes
 
 ### What Is Speculative
 1. Specific return targets (5x, 10x) — base rates are extremely low
 2. That the 2009-2024 factor relationships will persist in different market regimes
 3. That a systematic screen can reliably identify the 2-4% of stocks that create wealth
 4. UK-specific coefficient magnitudes for any factor
+5. That specific factor calibrations from Yartseva's US sample apply to UK markets
+6. That Yartseva's US findings are directionally applicable to UK equities — this is an assumption based on partial overlap with Stockopedia UK observations, not an established fact
